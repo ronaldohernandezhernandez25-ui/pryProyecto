@@ -32,10 +32,10 @@ namespace pryProyecto
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
 
-            //pcbAlumnos.Parent = pcbMenu;
-            //pcbCarreras.Parent = pcbMenu;
-            //pcbDocente.Parent = pcbMenu;
-            //pcbUsuario.Parent = pcbMenu;
+            pcbAlumnos.Parent = pcbMenu;
+            pcbCarreras.Parent = pcbMenu;
+            pcbDocente.Parent = pcbMenu;
+            pcbUsuario.Parent = pcbMenu;
 
             pcbAlumnos.BackColor = Color.Transparent;
             pcbCarreras.BackColor = Color.Transparent;
