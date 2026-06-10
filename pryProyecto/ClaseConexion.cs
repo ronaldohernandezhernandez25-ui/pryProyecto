@@ -16,7 +16,7 @@ namespace pryProyecto
         private string contraseña = "tercero@B";
         private string puerto = "3306";
 
-        private string cadenaConexion => $"server={host}; datebase={bd}; user={usuario}; password={contraseña}; puerto={puerto};";
+        private string cadenaConexion => $"server={host}; database={bd}; user={usuario}; password={contraseña}; port={puerto};";
 
         public MySqlConnection AbrirConexion()
         {

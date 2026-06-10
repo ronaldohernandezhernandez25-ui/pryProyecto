@@ -38,18 +38,20 @@
             // 
             // txtUsuario
             // 
+            txtUsuario.Font = new Font("Segoe UI", 13.8F);
             txtUsuario.Location = new Point(350, 122);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Ingrese el Usuario";
-            txtUsuario.Size = new Size(279, 27);
+            txtUsuario.Size = new Size(279, 38);
             txtUsuario.TabIndex = 0;
             // 
             // txtPassword
             // 
+            txtPassword.Font = new Font("Segoe UI", 13.8F);
             txtPassword.Location = new Point(350, 198);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Ingrese la Contraseña";
-            txtPassword.Size = new Size(279, 27);
+            txtPassword.Size = new Size(279, 38);
             txtPassword.TabIndex = 1;
             txtPassword.UseSystemPasswordChar = true;
             // 
@@ -65,6 +67,7 @@
             // 
             // btnAcceder
             // 
+            btnAcceder.Font = new Font("Segoe UI", 13.8F);
             btnAcceder.Location = new Point(350, 278);
             btnAcceder.Name = "btnAcceder";
             btnAcceder.Size = new Size(102, 42);
@@ -75,6 +78,7 @@
             // 
             // btnSalir
             // 
+            btnSalir.Font = new Font("Segoe UI", 13.8F);
             btnSalir.Location = new Point(518, 278);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(102, 42);
