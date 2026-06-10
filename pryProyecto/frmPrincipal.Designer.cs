@@ -49,9 +49,9 @@
             pcbMenu.AccessibleRole = AccessibleRole.None;
             pcbMenu.BackColor = Color.Transparent;
             pcbMenu.Image = (Image)resources.GetObject("pcbMenu.Image");
-            pcbMenu.Location = new Point(12, 160);
+            pcbMenu.Location = new Point(12, 12);
             pcbMenu.Name = "pcbMenu";
-            pcbMenu.Size = new Size(410, 850);
+            pcbMenu.Size = new Size(405, 998);
             pcbMenu.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbMenu.TabIndex = 0;
             pcbMenu.TabStop = false;
@@ -71,7 +71,7 @@
             // 
             pcbAlumnos.BackColor = Color.Transparent;
             pcbAlumnos.Image = (Image)resources.GetObject("pcbAlumnos.Image");
-            pcbAlumnos.Location = new Point(34, 274);
+            pcbAlumnos.Location = new Point(21, 129);
             pcbAlumnos.Name = "pcbAlumnos";
             pcbAlumnos.Size = new Size(363, 122);
             pcbAlumnos.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -83,7 +83,7 @@
             // pcbCarreras
             // 
             pcbCarreras.Image = (Image)resources.GetObject("pcbCarreras.Image");
-            pcbCarreras.Location = new Point(34, 431);
+            pcbCarreras.Location = new Point(21, 354);
             pcbCarreras.Name = "pcbCarreras";
             pcbCarreras.Size = new Size(363, 122);
             pcbCarreras.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -96,7 +96,7 @@
             // 
             pcbUsuario.BackColor = Color.Transparent;
             pcbUsuario.Image = (Image)resources.GetObject("pcbUsuario.Image");
-            pcbUsuario.Location = new Point(34, 767);
+            pcbUsuario.Location = new Point(21, 803);
             pcbUsuario.Name = "pcbUsuario";
             pcbUsuario.Size = new Size(363, 122);
             pcbUsuario.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -108,7 +108,7 @@
             // pcbDocente
             // 
             pcbDocente.Image = (Image)resources.GetObject("pcbDocente.Image");
-            pcbDocente.Location = new Point(34, 599);
+            pcbDocente.Location = new Point(21, 583);
             pcbDocente.Name = "pcbDocente";
             pcbDocente.Size = new Size(363, 122);
             pcbDocente.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -129,7 +129,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(39, 62, 92);
+            BackColor = Color.Gray;
             ClientSize = new Size(1920, 1051);
             Controls.Add(pnlContenedor);
             Controls.Add(pcbDocente);
