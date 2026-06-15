@@ -46,8 +46,6 @@ namespace pryProyecto
             pcbUsuario.Enabled =  clsLogin.EsAdministrador;
             pcbUsuario.Enabled = clsLogin.EsAdministrador;
 
-            
-
         }
     }
 }
