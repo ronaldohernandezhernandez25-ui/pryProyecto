@@ -41,6 +41,11 @@ namespace pryProyecto
             pcbCarreras.BackColor = Color.Transparent;
             pcbDocente.BackColor = Color.Transparent;
             pcbUsuario.BackColor = Color.Transparent;
+
+            pcbUsuario.Enabled =  clsLogin.EsAdministrador;
+            pcbUsuario.Enabled =  clsLogin.EsAdministrador;
+            pcbUsuario.Enabled = clsLogin.EsAdministrador;
+
         }
     }
 }
