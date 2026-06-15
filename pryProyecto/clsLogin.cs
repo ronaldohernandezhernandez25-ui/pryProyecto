@@ -28,10 +28,16 @@ namespace pryProyecto
             switch (perfil)
             {
                 case "Administrador":
-
+                    esAdministrador = true;
+                    esDocente = false;
                     break;
                 case "Docente":
-
+                    esDocente = true;
+                    esAdministrador = false;
+                    break;
+                default:
+                    esAdministrador=false;
+                    esDocente = false;
                     break;
             }
         }
@@ -56,7 +62,12 @@ namespace pryProyecto
                             if (resultado.Read())
                             {
                                 perfil = resultado.GetString("perfil");
-                                MessageBox.Show("Tu perfil es: " + perfil + " Sistema");
+                                AsignarPermisos();
+                                if(!esAdministrador && !esDocente)
+                                {
+                                    throw new Exception($"El perfil {perfil} no tiene permisos para acceder");
+                                }
+                                MessageBox.Show("Tu perfil es:"+perfil,"sistema");
                                 return true;
                             }
                             else
