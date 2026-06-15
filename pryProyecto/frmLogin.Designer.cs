@@ -28,18 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             txtUsuario = new TextBox();
             txtPassword = new TextBox();
             pcbImagenLogin = new PictureBox();
             btnAcceder = new Button();
             btnSalir = new Button();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pcbImagenLogin).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Segoe UI", 13.8F);
-            txtUsuario.Location = new Point(350, 122);
+            txtUsuario.Location = new Point(150, 305);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Ingrese el Usuario";
             txtUsuario.Size = new Size(279, 38);
@@ -48,7 +51,7 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 13.8F);
-            txtPassword.Location = new Point(350, 198);
+            txtPassword.Location = new Point(150, 368);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Ingrese la Contraseña";
             txtPassword.Size = new Size(279, 38);
@@ -58,9 +61,9 @@
             // pcbImagenLogin
             // 
             pcbImagenLogin.Image = Properties.Resources.usuario_icono;
-            pcbImagenLogin.Location = new Point(44, 84);
+            pcbImagenLogin.Location = new Point(215, 84);
             pcbImagenLogin.Name = "pcbImagenLogin";
-            pcbImagenLogin.Size = new Size(183, 236);
+            pcbImagenLogin.Size = new Size(166, 193);
             pcbImagenLogin.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbImagenLogin.TabIndex = 2;
             pcbImagenLogin.TabStop = false;
@@ -68,9 +71,9 @@
             // btnAcceder
             // 
             btnAcceder.Font = new Font("Segoe UI", 13.8F);
-            btnAcceder.Location = new Point(350, 278);
+            btnAcceder.Location = new Point(150, 430);
             btnAcceder.Name = "btnAcceder";
-            btnAcceder.Size = new Size(102, 42);
+            btnAcceder.Size = new Size(118, 42);
             btnAcceder.TabIndex = 3;
             btnAcceder.Text = "Acceder";
             btnAcceder.UseVisualStyleBackColor = true;
@@ -79,19 +82,31 @@
             // btnSalir
             // 
             btnSalir.Font = new Font("Segoe UI", 13.8F);
-            btnSalir.Location = new Point(518, 278);
+            btnSalir.Location = new Point(311, 430);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(102, 42);
+            btnSalir.Size = new Size(118, 42);
             btnSalir.TabIndex = 4;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
             btnSalir.Click += btnSalir_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(124, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(364, 56);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // frmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.FromArgb(205, 205, 205);
+            ClientSize = new Size(598, 539);
+            Controls.Add(pictureBox1);
             Controls.Add(btnSalir);
             Controls.Add(btnAcceder);
             Controls.Add(pcbImagenLogin);
@@ -100,6 +115,7 @@
             Name = "frmLogin";
             Text = "Login";
             ((System.ComponentModel.ISupportInitialize)pcbImagenLogin).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -111,5 +127,6 @@
         private PictureBox pcbImagenLogin;
         private Button btnAcceder;
         private Button btnSalir;
+        private PictureBox pictureBox1;
     }
 }
