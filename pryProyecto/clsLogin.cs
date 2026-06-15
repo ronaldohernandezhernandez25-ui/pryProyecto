@@ -14,8 +14,26 @@ namespace pryProyecto
 
         public string Usuario { get => usuario; set => usuario = value; }
         public string Password { get => password; set => password = value; }
+        public static bool EsAdministrador { get => esAdministrador; private set => esAdministrador = value; }
+        public static bool EsDocente { get => esDocente; private set => esDocente = value; }
 
-        public static string perfil;
+        //atributo estatica
+        private static string perfil;
+        private static bool esAdministrador;
+        private static bool esDocente;
+
+        public void AsignarPermisos()
+        {
+            switch (perfil)
+            {
+                case "Administrador":
+
+                    break;
+                case "Docente":
+
+                    break;
+            }
+        }
 
         public bool ValidarAcceso()
         {
