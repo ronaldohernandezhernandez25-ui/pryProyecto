@@ -22,6 +22,7 @@ namespace pryProyecto
         private static bool esAdministrador;
         private static bool esDocente;
 
+
         public void AsignarPermisos()
         {
             switch (perfil)
