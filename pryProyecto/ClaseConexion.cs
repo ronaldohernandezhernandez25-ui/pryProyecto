@@ -11,9 +11,9 @@ namespace pryProyecto
     internal class ClaseConexion
     {
         private string host = "189.240.192.140";
-        private string bd = "bdescuela3b";
-        private string usuario = "terceroB";
-        private string contraseña = "tercero@B";
+        private string bd = "bdescuelagbequipo6";
+        private string usuario = "gbEquipo6";
+        private string contraseña = "grupo6";
         private string puerto = "3306";
 
         private string cadenaConexion => $"server={host}; database={bd}; user={usuario}; password={contraseña}; port={puerto};";

@@ -48,7 +48,7 @@ namespace pryProyecto
             {
                 ClaseConexion conexionBD = new ClaseConexion();
                 using (var conexion = conexionBD.AbrirConexion())
-                {
+                { 
                     string sql = "SELECT perfil FROM tblUsuarios " +
                         "WHERE nombreUsuario = @usuario AND password = MD5(@password)";
 
@@ -67,7 +67,7 @@ namespace pryProyecto
                                 {
                                     throw new Exception($"El perfil {perfil} no tiene permisos para acceder");
                                 }
-                                MessageBox.Show("Tu perfil es:"+perfil,"sistema");
+                                MessageBox.Show("Tu perfil es: "+perfil,"sistema");
                                 return true;
                             }
                             else
