@@ -56,7 +56,7 @@ namespace pryProyecto
                     {
                         consulta.Parameters.AddWithValue("@usuario", usuario);
                         consulta.Parameters.AddWithValue("@password", password);
-
+                        
                         using (var resultado = consulta.ExecuteReader())
                         {
                             if (resultado.Read())
