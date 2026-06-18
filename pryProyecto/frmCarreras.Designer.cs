@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCarreras));
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pcbLogo = new PictureBox();
             lblTitulo = new Label();
             pnlAgrupaControles = new Panel();
@@ -73,14 +75,14 @@
             pnlAgrupaControles.Controls.Add(txtNombre);
             pnlAgrupaControles.Location = new Point(246, 248);
             pnlAgrupaControles.Name = "pnlAgrupaControles";
-            pnlAgrupaControles.Size = new Size(798, 282);
+            pnlAgrupaControles.Size = new Size(798, 268);
             pnlAgrupaControles.TabIndex = 2;
             // 
             // btnEliminar
             // 
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.Location = new Point(496, 196);
+            btnEliminar.Location = new Point(496, 183);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(147, 68);
             btnEliminar.TabIndex = 4;
@@ -90,17 +92,18 @@
             // 
             btnGuardar.BackgroundImage = (Image)resources.GetObject("btnGuardar.BackgroundImage");
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnGuardar.Location = new Point(343, 196);
+            btnGuardar.Location = new Point(343, 183);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(147, 68);
             btnGuardar.TabIndex = 3;
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnNuevo
             // 
             btnNuevo.BackgroundImage = (Image)resources.GetObject("btnNuevo.BackgroundImage");
             btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNuevo.Location = new Point(179, 196);
+            btnNuevo.Location = new Point(179, 183);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(147, 68);
             btnNuevo.TabIndex = 2;
@@ -109,7 +112,7 @@
             // btnDescripcion
             // 
             btnDescripcion.Font = new Font("Book Antiqua", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDescripcion.Location = new Point(179, 130);
+            btnDescripcion.Location = new Point(179, 119);
             btnDescripcion.Name = "btnDescripcion";
             btnDescripcion.PlaceholderText = "Escriba una descripcion de la carrera";
             btnDescripcion.Size = new Size(464, 41);
@@ -118,7 +121,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Book Antiqua", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(179, 61);
+            txtNombre.Location = new Point(179, 34);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Escriba el nombre de la carrera";
             txtNombre.Size = new Size(464, 41);
@@ -126,10 +129,29 @@
             // 
             // dgvCarreras
             // 
+            dgvCarreras.AllowUserToAddRows = false;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 192, 192);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvCarreras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvCarreras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.InactiveCaption;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Desktop;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvCarreras.DefaultCellStyle = dataGridViewCellStyle4;
+            dgvCarreras.EnableHeadersVisualStyles = false;
             dgvCarreras.Location = new Point(246, 574);
             dgvCarreras.Name = "dgvCarreras";
             dgvCarreras.RowHeadersWidth = 51;
+            dgvCarreras.RowTemplate.Height = 35;
             dgvCarreras.Size = new Size(798, 184);
             dgvCarreras.TabIndex = 3;
             // 

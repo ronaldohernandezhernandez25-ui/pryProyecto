@@ -21,5 +21,10 @@ namespace pryProyecto
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvCarreras.DataSource = carreras.CargarDataGrid();
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
