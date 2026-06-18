@@ -156,7 +156,7 @@
             Controls.Add(pcbLogo);
             DoubleBuffered = true;
             Name = "frmCarreras";
-            Text = "frmCarreras";
+            Text = "Registro de Carreras";
             ((System.ComponentModel.ISupportInitialize)pcbLogo).EndInit();
             pnlAgrupaControles.ResumeLayout(false);
             pnlAgrupaControles.PerformLayout();
