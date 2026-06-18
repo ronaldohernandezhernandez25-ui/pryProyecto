@@ -12,6 +12,8 @@ namespace pryProyecto
 {
     public partial class frmPrincipal : Form
     {
+        clsPrincipal principal;
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -42,12 +44,18 @@ namespace pryProyecto
             pcbDocente.BackColor = Color.Transparent;
             pcbUsuario.BackColor = Color.Transparent;
 
-            pcbCarreras.Enabled =  clsLogin.EsAdministrador;
-            pcbDocente.Enabled =  clsLogin.EsAdministrador;
+            pcbCarreras.Enabled = clsLogin.EsAdministrador;
+            pcbDocente.Enabled = clsLogin.EsAdministrador;
             pcbUsuario.Enabled = clsLogin.EsAdministrador;
 
             pcbAlumnos.Enabled = clsLogin.EsAdministrador || clsLogin.EsDocente;
 
+        }
+
+        private void pcbCarreras_Click(object sender, EventArgs e)
+        {
+            principal = new clsPrincipal();
+            principal.agregarAlContenedor(new frmCarreras(),pnlContenedor);
         }
     }
 }

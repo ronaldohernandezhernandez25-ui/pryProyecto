@@ -8,5 +8,6 @@ namespace pryProyecto
 {
     internal class clsCarreras
     {
+        
     }
 }
