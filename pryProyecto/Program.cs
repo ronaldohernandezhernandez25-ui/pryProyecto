@@ -12,7 +12,6 @@ namespace pryProyecto
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
            
-            /*
             using (frmLogin login = new frmLogin())
             {
                 if (login.ShowDialog() == DialogResult.OK)
@@ -21,8 +20,6 @@ namespace pryProyecto
                     Application.Run(new frmPrincipal());
                 }
             }
-            */
-            Application.Run(new frmCarreras());
         }
     }
 }
