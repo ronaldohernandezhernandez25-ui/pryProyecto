@@ -157,11 +157,11 @@
             // 
             // textBox1
             // 
-            textBox1.Font = new Font("Book Antiqua", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(793, 536);
+            textBox1.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBox1.Location = new Point(793, 529);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Buscar carrera";
-            textBox1.Size = new Size(251, 32);
+            textBox1.Size = new Size(251, 39);
             textBox1.TabIndex = 4;
             // 
             // frmCarreras

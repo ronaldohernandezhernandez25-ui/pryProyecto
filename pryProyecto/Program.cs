@@ -12,6 +12,7 @@ namespace pryProyecto
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
            
+
             using (frmLogin login = new frmLogin())
             {
                 if (login.ShowDialog() == DialogResult.OK)
