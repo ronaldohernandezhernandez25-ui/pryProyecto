@@ -30,7 +30,7 @@ namespace pryProyecto
             }
         }
 
-
+        
 
         private void txtNombreCarrera_TextChanged(object sender, EventArgs e)
         {

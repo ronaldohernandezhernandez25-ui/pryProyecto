@@ -97,7 +97,7 @@
             btnGuardar.Size = new Size(147, 68);
             btnGuardar.TabIndex = 3;
             btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
+            
             // 
             // btnNuevo
             // 
