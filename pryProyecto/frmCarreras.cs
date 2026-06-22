@@ -30,10 +30,7 @@ namespace pryProyecto
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void txtNombreCarrera_TextChanged(object sender, EventArgs e)
         {
