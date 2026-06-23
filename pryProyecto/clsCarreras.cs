@@ -58,6 +58,7 @@ namespace pryProyecto
 
                     using (var consultar = new MySqlCommand(sql, conexion))
                     {
+                        // Asegurar coincidencia exacta del nombre del parámetro
                         consultar.Parameters.AddWithValue("@carrera", "%" + nombreCarrera + "%");
                         using (consulta = new MySqlDataAdapter(consultar))
                         {
@@ -105,7 +106,7 @@ namespace pryProyecto
                             }//libera la operacion de insercion
                             break;
                         case 1://Actualizar old
-                            string sqlA = "UPDATE tblcarreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = idCarrera;";
+                            string sqlA = "UPDATE tblcarreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = @idCarrera;";
                             using (comando = new MySqlCommand(sqlA, conexion))
                             {
 
