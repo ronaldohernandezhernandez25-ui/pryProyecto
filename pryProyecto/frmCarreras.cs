@@ -13,6 +13,9 @@ namespace pryProyecto
     public partial class frmCarreras : Form
     {
         clsCarreras carreras;
+        int idCarrera;
+
+
         public frmCarreras()
         {
             InitializeComponent();
@@ -32,7 +35,7 @@ namespace pryProyecto
 
         private void txtNombreCarrera_TextChanged(object sender, EventArgs e)
         {
-            carreras=new clsCarreras();
+            carreras = new clsCarreras();
             dgvCarreras.DataSource = null;
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
@@ -45,6 +48,37 @@ namespace pryProyecto
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void dgvCarreras_SelectionChanged(object sender, EventArgs e)
+        {
+            //este es el campo oculto que me servira de referencia para actualizar y eliminar
+            idCarrera = int.Parse(dgvCarreras.CurrentRow.Cells[0].Value.ToString());
+            //estos son visuales
+            txtNombre.Text = dgvCarreras.CurrentRow.Cells[1].Value.ToString();
+            txtDescripcion.Text = dgvCarreras.CurrentRow.Cells[2].Value.ToString();
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int tipoOperacion = idCarrera == 0 ? 0 : 1;
+
+                string msg = carreras.GuardarActualizar(tipoOperacion);
+                MessageBox.Show(msg);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            idCarrera = 0;
+            txtNombre.Focus ();
         }
     }
 }

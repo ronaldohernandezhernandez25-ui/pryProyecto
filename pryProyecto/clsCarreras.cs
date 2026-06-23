@@ -11,8 +11,11 @@ namespace pryProyecto
     internal class clsCarreras
     {
         private string nombreCarrera;
+        private string descripcion;
+        private int idCarrera;//Este atributo es para referencia para update y delete
 
         private MySqlDataAdapter consulta;
+        private MySqlCommand comando;
         private DataTable tabla;
 
         public string NombreCarrera { get => nombreCarrera; set => nombreCarrera = value; }
@@ -53,7 +56,7 @@ namespace pryProyecto
 
                     using (var consultar = new MySqlCommand(sql, conexion))
                     {
-                        consultar.Parameters.AddWithValue("@carrera", "%"+nombreCarrera+"%");
+                        consultar.Parameters.AddWithValue("@carrera", "%" + nombreCarrera + "%");
                         using (consulta = new MySqlDataAdapter(consultar))
                         {
                             consulta.Fill(tabla);
@@ -67,6 +70,68 @@ namespace pryProyecto
             }
 
             return tabla;
+        }
+
+        //Metodo para actualizar
+        public string GuardarActualizar(int tipoOperacion)
+        {
+            string msg = "";
+            try
+            {
+                ClaseConexion conexionBD = new ClaseConexion();
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    switch (tipoOperacion)
+                    {
+                        case 0://Insertar new
+                            string sqlN = "INSERT INTO tblcarreras(nombreCarrera,descripcion) VALUES(@nombreCarrera,@descripcion);";
+                            using (comando = new MySqlCommand(sqlN, conexion))
+                            {
+                                comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                                comando.Parameters.AddWithValue("descripcion", descripcion);
+
+                                int filasAfectadas = comando.ExecuteNonQuery();
+                                if (filasAfectadas > 0)
+                                {
+                                    msg = "El registro se guardo correctamente";
+                                }
+                                else
+                                {
+                                    msg = "No se guardaron los datos....";
+                                }
+
+                            }//libera la operacion de insercion
+                            break;
+                        case 1://Actualizar old
+                            string sqlA = "UPDATE tblcarreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = idCarrera;";
+                            using (comando = new MySqlCommand(sqlA, conexion))
+                            {
+
+                                comando.Parameters.AddWithValue("idCarrera", idCarrera);
+                                comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                                comando.Parameters.AddWithValue("descripcion", descripcion);
+
+                                int filasAfectadas = comando.ExecuteNonQuery();
+                                if (filasAfectadas > 0)
+                                {
+                                    msg = "El registro se guardo correctamente";
+                                }
+                                else
+                                {
+                                    msg = "No se guardaron los datos....";
+                                }
+
+                            }//libera la operacion de actualizacion
+                            break;
+                    }
+
+                }//libera la conexion
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error" + ex.Message);
+            }
+            return msg;
         }
     }
 }

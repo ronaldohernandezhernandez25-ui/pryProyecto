@@ -37,7 +37,7 @@
             btnEliminar = new Button();
             btnGuardar = new Button();
             btnNuevo = new Button();
-            btnDescripcion = new TextBox();
+            txtDescripcion = new TextBox();
             txtNombre = new TextBox();
             dgvCarreras = new DataGridView();
             txtNombreCarrera = new TextBox();
@@ -72,7 +72,7 @@
             pnlAgrupaControles.Controls.Add(btnEliminar);
             pnlAgrupaControles.Controls.Add(btnGuardar);
             pnlAgrupaControles.Controls.Add(btnNuevo);
-            pnlAgrupaControles.Controls.Add(btnDescripcion);
+            pnlAgrupaControles.Controls.Add(txtDescripcion);
             pnlAgrupaControles.Controls.Add(txtNombre);
             pnlAgrupaControles.Location = new Point(215, 186);
             pnlAgrupaControles.Margin = new Padding(3, 2, 3, 2);
@@ -112,8 +112,9 @@
             btnNuevo.Size = new Size(129, 51);
             btnNuevo.TabIndex = 2;
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
-            // btnDescripcion
+            // txtDescripcion
             // 
             btnDescripcion.Font = new Font("Book Antiqua", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnDescripcion.Location = new Point(157, 89);
@@ -161,6 +162,7 @@
             dgvCarreras.RowTemplate.Height = 35;
             dgvCarreras.Size = new Size(841, 138);
             dgvCarreras.TabIndex = 3;
+            dgvCarreras.SelectionChanged += dgvCarreras_SelectionChanged;
             // 
             // txtNombreCarrera
             // 
@@ -202,7 +204,7 @@
         private PictureBox pcbLogo;
         private Label lblTitulo;
         private Panel pnlAgrupaControles;
-        private TextBox btnDescripcion;
+        private TextBox txtDescripcion;
         private TextBox txtNombre;
         private Button btnEliminar;
         private Button btnGuardar;
