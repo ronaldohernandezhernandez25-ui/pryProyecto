@@ -11,8 +11,11 @@ namespace pryProyecto
     internal class clsCarreras
     {
         private string nombreCarrera;
+        private string descripcion;
+        private int idCarrera;//Este atributo es para referencia para update y delete
 
         private MySqlDataAdapter consulta;
+        private MySqlCommand comando;
         private DataTable tabla;
 
         public string NombreCarrera { get => nombreCarrera; set => nombreCarrera = value; }
@@ -67,6 +70,31 @@ namespace pryProyecto
             }
 
             return tabla;
+        }
+
+        //Metodo para actualizar
+        public string GuardarActualizar(int tipoOperacion)
+        {
+            string msg = "";
+
+            ClaseConexion conexionBD = new ClaseConexion();
+            using (var conexion = conexionBD.AbrirConexion())
+            {
+                switch (tipoOperacion)
+                {
+                    case 0://Insertar new
+                        string sql = "INSERT INTO tblcarreras(nombreCarrera,descripcion) VALUES(@nombreCarrera,@descripcion);";
+                        using (comando = new MySqlCommand(sql, conexion))
+                        {
+                            comando.Parameters.AddWithValue("nombreCarrera",nombreCarrera);
+                        }//libera la operacion de insercion
+                            break;
+                    case 1://Actualizar old
+
+                        break;
+                }
+
+            }//libera la conexion
         }
     }
 }
