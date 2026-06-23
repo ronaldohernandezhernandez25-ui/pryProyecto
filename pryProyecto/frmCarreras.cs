@@ -14,6 +14,8 @@ namespace pryProyecto
     {
         clsCarreras carreras;
         int idCarrera;
+
+
         public frmCarreras()
         {
             InitializeComponent();
@@ -58,6 +60,17 @@ namespace pryProyecto
             txtNombre.Text = dgvCarreras.CurrentRow.Cells[1].Value.ToString();
             txtDescripcion.Text = dgvCarreras.CurrentRow.Cells[2].Value.ToString();
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            int tipoOperacion=idCarrera==0 ? 0 : 1;
+            carreras.GuardarActualizar(tipoOperacion);
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            idCarrera = 0;
         }
     }
 }
