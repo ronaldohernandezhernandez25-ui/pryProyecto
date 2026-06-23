@@ -117,13 +117,13 @@
             // 
             // txtDescripcion
             // 
-            btnDescripcion.Font = new Font("Book Antiqua", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnDescripcion.Location = new Point(157, 89);
-            btnDescripcion.Margin = new Padding(3, 2, 3, 2);
-            btnDescripcion.Name = "btnDescripcion";
-            btnDescripcion.PlaceholderText = "Escriba una descripcion de la carrera";
-            btnDescripcion.Size = new Size(406, 34);
-            btnDescripcion.TabIndex = 1;
+            txtDescripcion.Font = new Font("Book Antiqua", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDescripcion.Location = new Point(157, 89);
+            txtDescripcion.Margin = new Padding(3, 2, 3, 2);
+            txtDescripcion.Name = "btnDescripcion";
+            txtDescripcion.PlaceholderText = "Escriba una descripcion de la carrera";
+            txtDescripcion.Size = new Size(406, 34);
+            txtDescripcion.TabIndex = 1;
             // 
             // txtNombre
             // 
