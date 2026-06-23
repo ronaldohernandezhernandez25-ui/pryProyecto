@@ -19,6 +19,8 @@ namespace pryProyecto
         private DataTable tabla;
 
         public string NombreCarrera { get => nombreCarrera; set => nombreCarrera = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public int IdCarrera { get => idCarrera; set => idCarrera = value; }
 
         public DataTable CargarDataGrid()
         {
@@ -29,7 +31,7 @@ namespace pryProyecto
                 ClaseConexion conexionDB = new ClaseConexion();
                 using (var conexion = conexionDB.AbrirConexion())
                 {
-                    string sql = "SELECT idCarrera AS Clave, nombreCarrera AS Carrera, descripcion AS Descripcion FROM tblcarreras;;";
+                    string sql = "SELECT idCarrera AS Clave, nombreCarrera AS Carrera, descripcion AS Descripcion FROM tblcarreras;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);

@@ -19,10 +19,13 @@ namespace pryProyecto
         public frmCarreras()
         {
             InitializeComponent();
+            cargarDataGrid();
+        }
+        public void cargarDataGrid()
+        {
             carreras = new clsCarreras();
             dgvCarreras.DataSource = null;
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
             try
             {
                 dgvCarreras.DataSource = carreras.CargarDataGrid();
@@ -32,7 +35,6 @@ namespace pryProyecto
                 MessageBox.Show(ex.Message);
             }
         }
-
 
 
         private void txtNombreCarrera_TextChanged(object sender, EventArgs e)
@@ -64,12 +66,17 @@ namespace pryProyecto
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 int tipoOperacion = idCarrera == 0 ? 0 : 1;
 
+                carreras.IdCarrera = idCarrera;
+                carreras.NombreCarrera = txtNombre.Text;
+                carreras.Descripcion = txtDescripcion.Text;
                 string msg = carreras.GuardarActualizar(tipoOperacion);
                 MessageBox.Show(msg);
+                cargarDataGrid();
             }
             catch (Exception ex)
             {
@@ -80,7 +87,9 @@ namespace pryProyecto
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             idCarrera = 0;
-            txtNombre.Focus ();
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+            txtNombre.Focus();
         }
     }
 }
