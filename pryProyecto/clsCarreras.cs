@@ -56,7 +56,7 @@ namespace pryProyecto
 
                     using (var consultar = new MySqlCommand(sql, conexion))
                     {
-                        consultar.Parameters.AddWithValue("@carrera", "%"+nombreCarrera+"%");
+                        consultar.Parameters.AddWithValue("@carrera", "%" + nombreCarrera + "%");
                         using (consulta = new MySqlDataAdapter(consultar))
                         {
                             consulta.Fill(tabla);
@@ -76,25 +76,62 @@ namespace pryProyecto
         public string GuardarActualizar(int tipoOperacion)
         {
             string msg = "";
-
-            ClaseConexion conexionBD = new ClaseConexion();
-            using (var conexion = conexionBD.AbrirConexion())
+            try
             {
-                switch (tipoOperacion)
+                ClaseConexion conexionBD = new ClaseConexion();
+                using (var conexion = conexionBD.AbrirConexion())
                 {
-                    case 0://Insertar new
-                        string sql = "INSERT INTO tblcarreras(nombreCarrera,descripcion) VALUES(@nombreCarrera,@descripcion);";
-                        using (comando = new MySqlCommand(sql, conexion))
-                        {
-                            comando.Parameters.AddWithValue("nombreCarrera",nombreCarrera);
-                        }//libera la operacion de insercion
+                    switch (tipoOperacion)
+                    {
+                        case 0://Insertar new
+                            string sqlN = "INSERT INTO tblcarreras(nombreCarrera,descripcion) VALUES(@nombreCarrera,@descripcion);";
+                            using (comando = new MySqlCommand(sqlN, conexion))
+                            {
+                                comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                                comando.Parameters.AddWithValue("descripcion", descripcion);
+
+                                int filasAfectadas = comando.ExecuteNonQuery();
+                                if (filasAfectadas > 0)
+                                {
+                                    msg = "El registro se guardo correctamente";
+                                }
+                                else
+                                {
+                                    msg = "No se guardaron los datos....";
+                                }
+
+                            }//libera la operacion de insercion
                             break;
-                    case 1://Actualizar old
+                        case 1://Actualizar old
+                            string sqlA = "UPDATE tblcarreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = idCarrera;";
+                            using (comando = new MySqlCommand(sqlA, conexion))
+                            {
 
-                        break;
-                }
+                                comando.Parameters.AddWithValue("idCarrera", idCarrera);
+                                comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                                comando.Parameters.AddWithValue("descripcion", descripcion);
 
-            }//libera la conexion
+                                int filasAfectadas = comando.ExecuteNonQuery();
+                                if (filasAfectadas > 0)
+                                {
+                                    msg = "El registro se guardo correctamente";
+                                }
+                                else
+                                {
+                                    msg = "No se guardaron los datos....";
+                                }
+
+                            }//libera la operacion de actualizacion
+                            break;
+                    }
+
+                }//libera la conexion
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error" + ex.Message);
+            }
+            return msg;
         }
     }
 }

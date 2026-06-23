@@ -64,13 +64,23 @@ namespace pryProyecto
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int tipoOperacion=idCarrera==0 ? 0 : 1;
-            carreras.GuardarActualizar(tipoOperacion);
+            try
+            {
+                int tipoOperacion = idCarrera == 0 ? 0 : 1;
+
+                string msg = carreras.GuardarActualizar(tipoOperacion);
+                MessageBox.Show(msg);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             idCarrera = 0;
+            txtNombre.Focus ();
         }
     }
 }
