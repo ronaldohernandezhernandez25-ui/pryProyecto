@@ -135,5 +135,37 @@ namespace pryProyecto
             }
             return msg;
         }
+
+        public string Eliminar()
+        {
+            string msg = "";
+            try
+            {
+
+                ClaseConexion conexionBD = new ClaseConexion();
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "DELETE FROM tblcarreras C WHERE C.idCarrera = @idCarrera;";
+                    using (comando = new MySqlCommand(sql, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@idCarrera", idCarrera);
+                        int filasAfectadas = comando.ExecuteNonQuery();
+                        if (filasAfectadas > 0)
+                        {
+                            msg = "Datos eliminados correctamente";
+                        }
+                        else
+                        {
+                            msg = "Los datos no se pudieron eliminar";
+                        }
+                    }//libera la operacion de eliminacion
+                }//libera la conexion
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error" + ex.Message);
+            }
+            return msg;
+        }
     }
 }

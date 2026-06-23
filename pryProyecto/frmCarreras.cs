@@ -74,8 +74,22 @@ namespace pryProyecto
                 carreras.IdCarrera = idCarrera;
                 carreras.NombreCarrera = txtNombre.Text;
                 carreras.Descripcion = txtDescripcion.Text;
-                string msg = carreras.GuardarActualizar(tipoOperacion);
-                MessageBox.Show(msg);
+                string msg = "";
+                if (tipoOperacion != 0)
+                {
+                    var resp = MessageBox.Show("comfirmar que desea actualizar el dato selecionado", "Alerta!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resp == DialogResult.Yes)
+                    {
+                        msg = carreras.GuardarActualizar(tipoOperacion);
+                        MessageBox.Show(msg);
+                    }
+                }
+                else
+                {
+                    msg = carreras.GuardarActualizar(tipoOperacion);
+                    MessageBox.Show(msg);
+                }
+
                 cargarDataGrid();
             }
             catch (Exception ex)
@@ -90,6 +104,25 @@ namespace pryProyecto
             txtNombre.Clear();
             txtDescripcion.Clear();
             txtNombre.Focus();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                carreras.IdCarrera = idCarrera;
+                var resp = MessageBox.Show("¿Está seguro de eliminar la carrera seleccionada?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                if (resp == DialogResult.Yes)
+                {
+                    string msg = carreras.Eliminar();
+                    MessageBox.Show(msg);
+                    cargarDataGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
