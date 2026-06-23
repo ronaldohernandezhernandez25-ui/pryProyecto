@@ -25,12 +25,7 @@ namespace pryProyecto
         {
             carreras = new clsCarreras();
             dgvCarreras.DataSource = null;
-            // Permitir que las columnas se generen automáticamente según el DataSource
-            dgvCarreras.AutoGenerateColumns = true;
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            // Facilitar la selección por fila y deshabilitar selección múltiple
-            dgvCarreras.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvCarreras.MultiSelect = false;
             try
             {
                 dgvCarreras.DataSource = carreras.CargarDataGrid();
@@ -61,23 +56,11 @@ namespace pryProyecto
 
         private void dgvCarreras_SelectionChanged(object sender, EventArgs e)
         {
-
-            // Proteger contra selección nula o estructura inesperada
-            if (dgvCarreras.CurrentRow == null) return;
-            if (dgvCarreras.CurrentRow.Cells.Count < 3) return;
-
-            var cell0 = dgvCarreras.CurrentRow.Cells[0].Value;
-            var cell1 = dgvCarreras.CurrentRow.Cells[1].Value;
-            var cell2 = dgvCarreras.CurrentRow.Cells[2].Value;
-
-            if (cell0 == null || cell0 == DBNull.Value) return;
-
             //este es el campo oculto que me servira de referencia para actualizar y eliminar
-            if (!int.TryParse(cell0.ToString(), out idCarrera)) idCarrera = 0;
-
+            idCarrera = int.Parse(dgvCarreras.CurrentRow.Cells[0].Value.ToString());
             //estos son visuales
-            txtNombre.Text = cell1 == null || cell1 == DBNull.Value ? string.Empty : cell1.ToString();
-            txtDescripcion.Text = cell2 == null || cell2 == DBNull.Value ? string.Empty : cell2.ToString();
+            txtNombre.Text = dgvCarreras.CurrentRow.Cells[1].Value.ToString();
+            txtDescripcion.Text = dgvCarreras.CurrentRow.Cells[2].Value.ToString();
 
         }
 
@@ -86,7 +69,6 @@ namespace pryProyecto
 
             try
             {
-                if (carreras == null) carreras = new clsCarreras();
                 int tipoOperacion = idCarrera == 0 ? 0 : 1;
 
                 carreras.IdCarrera = idCarrera;
