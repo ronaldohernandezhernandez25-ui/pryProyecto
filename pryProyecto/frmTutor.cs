@@ -107,26 +107,6 @@ namespace pryProyecto
             }
         }
 
-        private void btnNuevoTutor_Click(object sender, EventArgs e)
-        {
-            idTutor = 0;
-            txtNombreTutor.Clear();
-            txtParentesco.Clear();
-            txtDireccion.Clear();
-            txtTelefono.Clear();
-            txtCorreo.Clear();
-            txtNombreTutor.Focus();
-        }
-
-        private void dgvTutor_SelectionChanged(object sender, EventArgs e)
-        {
-            idTutor = int.Parse(dgvTutor.CurrentRow.Cells[0].Value.ToString());
-
-            txtNombreTutor.Text = dgvTutor.CurrentRow.Cells[1].Value.ToString();
-            txtParentesco.Text = dgvTutor.CurrentRow.Cells[2].Value.ToString();
-            txtDireccion.Text = dgvTutor.CurrentRow.Cells[3].Value.ToString();
-            txtTelefono.Text = dgvTutor.CurrentRow.Cells[4].Value.ToString();
-            txtCorreo.Text = dgvTutor.CurrentRow.Cells[5].Value.ToString();
-        }
+     
     }
 }
