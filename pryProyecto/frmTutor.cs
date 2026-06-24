@@ -12,9 +12,6 @@ namespace pryProyecto
 {
     public partial class frmTutor : Form
     {
-        public frmTutor()
-        {
-            InitializeComponent();
-        }
+        
     }
 }
