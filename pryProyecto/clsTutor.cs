@@ -8,34 +8,27 @@ using System.Threading.Tasks;
 
 namespace pryProyecto
 {
-    internal class clsTutor
+    internal class clsTutores
     {
-        private string nombreTutor;
+        private string nombreComp;
         private string parentesco;
         private string direccion;
         private string telefono;
-        private string email;
-        private int idTutor; //este atributo es para referencia en update y delete
-        //Usar un adaptador
+        private string correo;
+        private int idTutor;
+
         private MySqlDataAdapter consulta;
-        //usamos comandpara insertar o actualizar
         private MySqlCommand comando;
-        //Usamos una tabla temporal
         private DataTable tabla;
 
-
-        //propiedad para el atributo nombre tutor
-        public string NombreTutor { get => nombreTutor; set => nombreTutor = value; }
+        public string NombreComp { get => nombreComp; set => nombreComp = value; }
         public string Parentesco { get => parentesco; set => parentesco = value; }
         public string Direccion { get => direccion; set => direccion = value; }
         public string Telefono { get => telefono; set => telefono = value; }
-        public string Email { get => email; set => email = value; }
+        public string Correo { get => correo; set => correo = value; }
         public int IdTutor { get => idTutor; set => idTutor = value; }
 
-
-
-        //metodo para cargar datos en el DataGrid
-        public DataTable CargarDataGrid()
+        public DataTable cargarTabla()
         {
             tabla = new DataTable();
             try
@@ -43,23 +36,20 @@ namespace pryProyecto
                 ClaseConexion conexionBD = new ClaseConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT idTutor AS Clave, nombreTutor AS Tutor, parentesco AS Parentesco, direccion AS Dirección, telefono AS Número de telefono, correo AS Correo electrónico FROM tbltutores;";
+                    string sql = "select idTutor AS Clave, nombreTutor AS 'Nombre Completo', parentesco AS Parentesco, direccion AS 'Dirección', telefono AS 'Teléfono', correo AS Correo from tbltutores;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);
-                    }//Liberar la consulta
-
-                }//liberar la conexion
+                    }
+                }
             }
             catch (Exception ex)
             {
-
-                throw new Exception("error en la conexion " + ex.Message);
+                throw new Exception("Error en laa conexion" + ex.Message);
             }
             return tabla;
         }
-
-        //Metodo para consultar por coincidencias
+        //Metodo de consulta para buscar
         public DataTable Consultar()
         {
             tabla = new DataTable();
@@ -68,24 +58,23 @@ namespace pryProyecto
                 ClaseConexion conexionBD = new ClaseConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT idTutor AS Clave,nombreTutor AS Tutor, parentesco AS Parentesco, direccion AS Dirección, telefono AS Número de telefono, correo AS Correo electrónico\r\nFROM tbltutores WHERE nombreTutor LIKE @Tutor; ";
+                    string sql = "select idTutor AS Clave, nombreTutor AS 'Nombre Completo', parentesco AS Parentesco, direccion AS 'Dirección', telefono AS 'Teléfono', correo AS Correo from tbltutores where nombreTutor like @nombreTutor ;";
                     using (var consultar = new MySqlCommand(sql, conexion))
                     {
-                        consultar.Parameters.AddWithValue("@Tutor", "%" + nombreTutor + "%");
+                        consultar.Parameters.AddWithValue("@nombreTutor", "%" + nombreComp + "%");
                         using (consulta = new MySqlDataAdapter(consultar))
                         {
                             consulta.Fill(tabla);
-                        }//Liberara el adaptador
-                    }//Liberar la consulta
-                }//Libera la conexion
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception("Error en la conexion de la base de datos" + ex.Message);
+                throw new Exception("Error en la conexion" + ex.Message);
             }
             return tabla;
         }
-
 
         public string GuardarActualizar(int tipoOperacion)
         {
@@ -101,14 +90,14 @@ namespace pryProyecto
                     {
                         case 0:
                             //registro nuevo
-                            string sqlN = "insert into tbltutores  (nombreTutor,parentesco, direccion,telefono,correo) values(@nombreTutor, @parentesco,@direccion,@telefono,@email)";
+                            string sqlN = "insert into tbltutores  (nombreTutor,parentesco,direccion,telefono,correo) values(@nombreTutor, @parentesco, @direccion,@telefono,@correo)";
                             using (comando = new MySqlCommand(sqlN, conexion))
                             {
-                                comando.Parameters.AddWithValue("nombreTutor", nombreTutor);
+                                comando.Parameters.AddWithValue("nombreTutor", nombreComp);
                                 comando.Parameters.AddWithValue("parentesco", parentesco);
                                 comando.Parameters.AddWithValue("direccion", direccion);
                                 comando.Parameters.AddWithValue("telefono", telefono);
-                                comando.Parameters.AddWithValue("email", email);
+                                comando.Parameters.AddWithValue("correo", correo);
 
                                 int filasAfectadas = comando.ExecuteNonQuery();
                                 if (filasAfectadas > 0)
@@ -122,16 +111,16 @@ namespace pryProyecto
                             }
                             break;
                         case 1:
-                            string sqlA = "UPDATE tbltutores C SET C.nombreTutor = @nombreTutor, C.parentesco = @parentesco, C.direccion = @direccion, C.telefono = @telefono, C.correo = @email  WHERE C.idTutor = @idTutor";
+                            string sqlA = "UPDATE tbltutores C SET C.nombreTutor = @nombreTutor, C.parentesco = @parentesco, C.direccion = @direccion, C.telefono = @telefono, C.correo = @correo WHERE C.idTutor = @idTutor";
                             using (comando = new MySqlCommand(sqlA, conexion))
                             {
 
                                 comando.Parameters.AddWithValue("idTutor", idTutor);
-                                comando.Parameters.AddWithValue("nombreTutor", nombreTutor);
+                                comando.Parameters.AddWithValue("nombreTutor", nombreComp);
                                 comando.Parameters.AddWithValue("parentesco", parentesco);
                                 comando.Parameters.AddWithValue("direccion", direccion);
                                 comando.Parameters.AddWithValue("telefono", telefono);
-                                comando.Parameters.AddWithValue("email", email);
+                                comando.Parameters.AddWithValue("correo", correo);
 
                                 int filasAfectadas = comando.ExecuteNonQuery();
                                 if (filasAfectadas > 0)
@@ -154,6 +143,7 @@ namespace pryProyecto
             }
             return msg;
         }
+
         public string Eliminar()
         {
             string msg = "";
@@ -162,10 +152,10 @@ namespace pryProyecto
                 ClaseConexion conexionBD = new ClaseConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "DELETE FROM tbltutores WHERE idTutor = @idTutor;";
+                    string sql = "DELETE FROM tbltutores C WHERE C.idTutor = @idtutor;";
                     using (comando = new MySqlCommand(sql, conexion))
                     {
-                        comando.Parameters.AddWithValue("@idTutor", idTutor);
+                        comando.Parameters.AddWithValue("@idTutor ", IdTutor);
                         int filasAfectadas = comando.ExecuteNonQuery();
                         if (filasAfectadas > 0)
                         {
@@ -175,8 +165,8 @@ namespace pryProyecto
                         {
                             msg = "Los datos no se pudieron eliminar";
                         }
-                    } //liberar la eliminacion
-                } //liberar la conexion
+                    }
+                }
             }
             catch (Exception ex)
             {
