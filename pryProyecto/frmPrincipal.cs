@@ -38,6 +38,7 @@ namespace pryProyecto
             pcbCarreras.Parent = pcbMenu;
             pcbDocente.Parent = pcbMenu;
             pcbUsuario.Parent = pcbMenu;
+            pcbTutores.Parent = pcbMenu;
 
             pcbAlumnos.BackColor = Color.Transparent;
             pcbCarreras.BackColor = Color.Transparent;
@@ -55,7 +56,7 @@ namespace pryProyecto
         private void pcbCarreras_Click(object sender, EventArgs e)
         {
             principal = new clsPrincipal();
-            principal.agregarAlContenedor(new frmCarreras(),pnlContenedor);
+            principal.agregarAlContenedor(new frmCarreras(), pnlContenedor);
         }
     }
 }
