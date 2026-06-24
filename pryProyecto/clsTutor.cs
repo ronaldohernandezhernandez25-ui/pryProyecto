@@ -33,7 +33,31 @@ namespace pryProyecto
         
 
         //Metodo para consultar por coincidencias
-       
+        public DataTable Consultar()
+        {
+            tabla = new DataTable();
+            try
+            {
+                ClaseConexion conexionBD = new ClaseConexion();
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "SELECT idTutor AS Clave, nombreTutor AS Tutor, " + "parentesco AS Parentesco, direccion AS Direccion, " + "telefono AS Telefono, correo AS Correo " + "FROM tbltutores WHERE nombreTutor LIKE @Tutor;";
+                    using (var consultar = new MySqlCommand(sql, conexion))
+                    {
+                        consultar.Parameters.AddWithValue("@nombreTutor", "%" + nombreComp + "%");
+                        using (consulta = new MySqlDataAdapter(consultar))
+                        {
+                            consulta.Fill(tabla);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la conexion" + ex.Message);
+            }
+            return tabla;
+        }
 
         public string GuardarActualizar(int tipoOperacion)
         {
