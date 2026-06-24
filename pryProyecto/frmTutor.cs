@@ -12,7 +12,7 @@ namespace pryProyecto
 {
     public partial class frmTutor : Form
     {
-        clsTutor tutor;
+        clsTutores tutor;
         int idTutor;
         public frmTutor()
         {
@@ -22,7 +22,7 @@ namespace pryProyecto
         }
         public void CargarGrid()
         {
-            tutor = new clsTutor();
+            tutor = new clsTutores();
             dgvTutor.DataSource = null;
             dgvTutor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             try
@@ -37,12 +37,12 @@ namespace pryProyecto
 
         private void txtBuscarTutor_TextChanged(object sender, EventArgs e)
         {
-            tutor = new clsTutor();
+            tutor = new clsTutores();
             dgvTutor.DataSource = null;
             dgvTutor.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             try
             {
-                tutor.NombreTutor = txtBuscarTutor.Text;
+                tutor.NombreComp = txtBuscarTutor.Text;
                 dgvTutor.DataSource = tutor.Consultar();
             }
             catch (Exception ex)
@@ -76,7 +76,7 @@ namespace pryProyecto
             {
                 int tipoOperacion = idTutor == 0 ? 0 : 1;
                 tutor.IdTutor = idTutor;
-                tutor.NombreTutor = txtNombreTutor.Text;
+                tutor.NombreComp = txtNombreTutor.Text;
                 tutor.Parentesco = txtParentesco.Text;
                 tutor.Direccion = txtDireccion.Text;
                 tutor.Telefono = txtTelefono.Text;
