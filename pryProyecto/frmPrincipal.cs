@@ -66,5 +66,11 @@ namespace pryProyecto
             principal = new clsPrincipal();
             principal.agregarAlContenedor(new frmTutor(), pnlContenedor);
         }
+
+        private void pcbAlumnos_Click(object sender, EventArgs e)
+        {
+            principal = new clsPrincipal();
+            principal.agregarAlContenedor(new frmAlumnos(), pnlContenedor);
+        }
     }
 }
