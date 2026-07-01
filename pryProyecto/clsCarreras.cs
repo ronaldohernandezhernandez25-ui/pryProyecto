@@ -136,7 +136,7 @@ namespace pryProyecto
             }
             return msg;
         }
-
+        //.
         public string Eliminar()
         {
             string msg = "";
