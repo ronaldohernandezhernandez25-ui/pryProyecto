@@ -30,7 +30,7 @@ namespace pryProyecto
 
 
 
-        
+
 
         //Metodo para consultar por coincidencias
         public DataTable Consultar()
@@ -126,7 +126,6 @@ namespace pryProyecto
             }
             return msg;
         }
-
         public string Eliminar()
         {
             string msg = "";
@@ -166,7 +165,7 @@ namespace pryProyecto
                 ClaseConexion conexionBD = new ClaseConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT idTutor AS Clave, nombreTutor AS Tutor, " + "parentesco AS Parentesco, direccion AS Direccion, "+ "telefono AS Telefono, correo AS Correo " + "FROM tbltutores;"; ;
+                    string sql = "SELECT idTutor AS Clave, nombreTutor AS Tutor, " + "parentesco AS Parentesco, direccion AS Direccion, " + "telefono AS Telefono, correo AS Correo " + "FROM tbltutores;"; ;
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);
@@ -181,6 +180,7 @@ namespace pryProyecto
             }
             return tabla;
         }
+
     }
 }
 

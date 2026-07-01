@@ -51,9 +51,9 @@
             pcbMenu.AccessibleRole = AccessibleRole.None;
             pcbMenu.BackColor = Color.Transparent;
             pcbMenu.Image = (Image)resources.GetObject("pcbMenu.Image");
-            pcbMenu.Location = new Point(12, 12);
+            pcbMenu.Location = new Point(12, 11);
             pcbMenu.Name = "pcbMenu";
-            pcbMenu.Size = new Size(405, 998);
+            pcbMenu.Size = new Size(405, 948);
             pcbMenu.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbMenu.TabIndex = 0;
             pcbMenu.TabStop = false;
@@ -62,9 +62,9 @@
             // 
             pcbTitulo.BackColor = Color.Transparent;
             pcbTitulo.Image = (Image)resources.GetObject("pcbTitulo.Image");
-            pcbTitulo.Location = new Point(532, 12);
+            pcbTitulo.Location = new Point(532, 11);
             pcbTitulo.Name = "pcbTitulo";
-            pcbTitulo.Size = new Size(1292, 157);
+            pcbTitulo.Size = new Size(1292, 149);
             pcbTitulo.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbTitulo.TabIndex = 1;
             pcbTitulo.TabStop = false;
@@ -73,21 +73,22 @@
             // 
             pcbAlumnos.BackColor = Color.Transparent;
             pcbAlumnos.Image = (Image)resources.GetObject("pcbAlumnos.Image");
-            pcbAlumnos.Location = new Point(31, 131);
+            pcbAlumnos.Location = new Point(31, 124);
             pcbAlumnos.Name = "pcbAlumnos";
-            pcbAlumnos.Size = new Size(363, 122);
+            pcbAlumnos.Size = new Size(363, 116);
             pcbAlumnos.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbAlumnos.TabIndex = 2;
             pcbAlumnos.TabStop = false;
+            pcbAlumnos.Click += pcbAlumnos_Click;
             pcbAlumnos.MouseDown += pcbGeneral_MouseDown;
             pcbAlumnos.MouseUp += pcbGeneral_MouseUp;
             // 
             // pcbCarreras
             // 
             pcbCarreras.Image = (Image)resources.GetObject("pcbCarreras.Image");
-            pcbCarreras.Location = new Point(31, 306);
+            pcbCarreras.Location = new Point(31, 291);
             pcbCarreras.Name = "pcbCarreras";
-            pcbCarreras.Size = new Size(363, 122);
+            pcbCarreras.Size = new Size(363, 116);
             pcbCarreras.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbCarreras.TabIndex = 3;
             pcbCarreras.TabStop = false;
@@ -99,9 +100,9 @@
             // 
             pcbUsuario.BackColor = Color.Transparent;
             pcbUsuario.Image = (Image)resources.GetObject("pcbUsuario.Image");
-            pcbUsuario.Location = new Point(31, 848);
+            pcbUsuario.Location = new Point(31, 806);
             pcbUsuario.Name = "pcbUsuario";
-            pcbUsuario.Size = new Size(363, 122);
+            pcbUsuario.Size = new Size(363, 116);
             pcbUsuario.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbUsuario.TabIndex = 4;
             pcbUsuario.TabStop = false;
@@ -111,9 +112,9 @@
             // pcbDocente
             // 
             pcbDocente.Image = (Image)resources.GetObject("pcbDocente.Image");
-            pcbDocente.Location = new Point(31, 666);
+            pcbDocente.Location = new Point(31, 633);
             pcbDocente.Name = "pcbDocente";
-            pcbDocente.Size = new Size(363, 122);
+            pcbDocente.Size = new Size(363, 116);
             pcbDocente.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbDocente.TabIndex = 5;
             pcbDocente.TabStop = false;
@@ -123,17 +124,17 @@
             // pnlContenedor
             // 
             pnlContenedor.BackColor = Color.White;
-            pnlContenedor.Location = new Point(532, 160);
+            pnlContenedor.Location = new Point(532, 152);
             pnlContenedor.Name = "pnlContenedor";
-            pnlContenedor.Size = new Size(1292, 850);
+            pnlContenedor.Size = new Size(1292, 808);
             pnlContenedor.TabIndex = 6;
             // 
             // pcbTutores
             // 
             pcbTutores.Image = (Image)resources.GetObject("pcbTutores.Image");
-            pcbTutores.Location = new Point(31, 491);
+            pcbTutores.Location = new Point(31, 466);
             pcbTutores.Name = "pcbTutores";
-            pcbTutores.Size = new Size(363, 122);
+            pcbTutores.Size = new Size(363, 116);
             pcbTutores.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbTutores.TabIndex = 7;
             pcbTutores.TabStop = false;
@@ -143,10 +144,10 @@
             // 
             // frmPrincipal
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(1920, 1051);
+            ClientSize = new Size(1920, 998);
             Controls.Add(pcbTutores);
             Controls.Add(pnlContenedor);
             Controls.Add(pcbDocente);
