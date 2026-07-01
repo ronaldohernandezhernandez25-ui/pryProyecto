@@ -55,6 +55,8 @@ namespace pryProyecto
                                  "C.nombreCarrera AS Carrera, " +
                                  "T.nombreTutor AS Tutor, " +
                                  "U.vchnombreUsuario AS Usuario, " +
+                                 "U.vchpassword, "+ // <-- SE AGREGA EL PASSWORD
+                                 "U.vchperfil, "+ //<-- SE AGREGA EL PERFIL
                                  "A.direccion, A.telefono, A.correo, " +
                                  "A.promedioBachillerato, A.foto, " +
                                  "A.idTutor, A.idCarrera, A.idUsuario " +
