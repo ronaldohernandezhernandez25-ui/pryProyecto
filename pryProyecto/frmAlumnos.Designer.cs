@@ -51,6 +51,9 @@
             btnGuardar = new Button();
             btnNuevo = new Button();
             btnEliminar = new Button();
+
+            txtMatriculaAlumnos = new TextBox();
+
             txtNombreCarrera = new TextBox();
             dgvAlumnos = new DataGridView();
             lblTitulo = new Label();
@@ -247,6 +250,8 @@
             btnNuevo.Size = new Size(147, 68);
             btnNuevo.TabIndex = 14;
             btnNuevo.UseVisualStyleBackColor = true;
+
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnEliminar
             // 
@@ -258,6 +263,15 @@
             btnEliminar.TabIndex = 16;
             btnEliminar.UseVisualStyleBackColor = true;
             // 
+            // txtMatriculaAlumnos
+            // 
+            txtMatriculaAlumnos.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMatriculaAlumnos.Location = new Point(817, 513);
+            txtMatriculaAlumnos.Name = "txtMatriculaAlumnos";
+            txtMatriculaAlumnos.PlaceholderText = "Buscar por matricula";
+            txtMatriculaAlumnos.Size = new Size(251, 39);
+            txtMatriculaAlumnos.TabIndex = 17;
+            txtMatriculaAlumnos.TextChanged += txtNombreCarrera_TextChanged;
             // txtNombreCarrera
             // 
             txtNombreCarrera.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -313,7 +327,11 @@
             ClientSize = new Size(1274, 803);
             Controls.Add(lblTitulo);
             Controls.Add(dgvAlumnos);
+
+            Controls.Add(txtMatriculaAlumnos);
+
             Controls.Add(txtNombreCarrera);
+
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);
@@ -354,6 +372,7 @@
         private Button btnGuardar;
         private Button btnNuevo;
         private Button btnEliminar;
+        private TextBox txtMatriculaAlumnos;
         private TextBox txtNombreCarrera;
         private DataGridView dgvAlumnos;
         private Label lblTitulo;

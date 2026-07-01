@@ -120,5 +120,49 @@ namespace pryProyecto
             }
             return tabla;
         }
+        public DataTable Consultar()
+        {
+            tabla = new DataTable();
+            try
+            {
+                ClaseConexion conexionBD = new ClaseConexion();
+
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "SELECT A.matricula AS Matricula, " +
+                                 "A.nombreALUMNO AS Nombre, " +
+                                 "A.apellidoP AS 'A. Paterno', " +
+                                 "A.apellidoM AS 'A. Materno', " +
+                                 "C.nombreCarrera AS Carrera, " +
+                                 "T.nombreTutor AS Tutor, " +
+                                 "U.vchnombreUsuario AS Usuario, " +
+                                 "U.vchpassword, "+ // <-- SE AGREGA EL PASSWORD
+                                 "U.vchperfil, "+ //<-- SE AGREGA EL PERFIL
+                                 "A.direccion, A.telefono, A.correo, " +
+                                 "A.promedioBachillerato, A.foto, " +
+                                 "A.idTutor, A.idCarrera, A.idUsuario " +
+                                 "FROM tblalumnos A " +
+                                 "INNER JOIN tblcarreras C ON A.idCarrera = C.idCarrera " +
+                                 "INNER JOIN tbltutores T ON A.idTutor = T.idTutor " +
+                                 "INNER JOIN tblusuarios U ON A.idUsuario = U.intidUsuario WHERE A.matricula LIKE @matricula;";
+
+                    using (var consultar = new MySqlCommand(sql, conexion))
+                    {
+                        // Asegurar coincidencia exacta del nombre del parámetro
+                        consultar.Parameters.AddWithValue("@matricula", "%" + matricula + "%");
+                        using (consulta = new MySqlDataAdapter(consultar))
+                        {
+                            consulta.Fill(tabla);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la conexion de la base de datos" + ex.Message);
+            }
+
+            return tabla;
+        }
     }
 }

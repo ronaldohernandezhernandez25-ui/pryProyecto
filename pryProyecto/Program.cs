@@ -20,8 +20,7 @@ namespace pryProyecto
 
                     Application.Run(new frmPrincipal());
                 }
-            }
-            Application.Run(new frmAlumnos());
+            //Application.Run(new frmAlumnos());
             
         }
     }

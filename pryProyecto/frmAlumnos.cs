@@ -121,5 +121,64 @@ namespace pryProyecto
                 MessageBox.Show("Error al mapear los datos seleccionados" + ex.Message);
             }
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            idMatricula = 0;
+            idUsuario = 0;
+
+            // Limpiar campos de alumno
+            txtMatricula.Clear();
+            txtNombre.Clear();
+            txtAPaterno.Clear();
+            txtAMaterno.Clear();
+            txtDireccion.Clear();
+            txtTelefono.Clear();
+            txtCorreo.Clear();
+            txtPromedioBachillerato.Clear();
+
+            // Limpiar campos de usuario relacionados
+            txtUsuario.Clear();
+            txtPassword.Clear();
+
+            try
+            {
+                cmbCarrera.SelectedIndex = 0;
+            }
+            catch { cmbCarrera.SelectedIndex = -1; }
+
+            try
+            {
+                cmbTutor.SelectedIndex = 0;
+            }
+            catch { cmbTutor.SelectedIndex = -1; }
+
+            cmbPerfil.SelectedIndex = -1;
+
+            // Colocar el foco en el campo principal
+            txtNombre.Focus();
+        }
+
+        private void txtNombreCarrera_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMatriculaAlumnos.Text))
+            {
+                cargarGrid();
+                return;
+            }
+            alumnos = new clsAlumnos();
+            dgvAlumnos.DataSource = null;
+            dgvAlumnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+            try
+            {
+                alumnos.Matricula = int. Parse (txtMatriculaAlumnos.Text);
+                dgvAlumnos.DataSource = alumnos.Consultar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Requiere asignar datos"+ex.Message);
+            }
+        }
     }
 }
