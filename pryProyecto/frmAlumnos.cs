@@ -159,26 +159,6 @@ namespace pryProyecto
             txtNombre.Focus();
         }
 
-        private void txtNombreCarrera_TextChanged(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(txtMatriculaAlumnos.Text))
-            {
-                cargarGrid();
-                return;
-            }
-            alumnos = new clsAlumnos();
-            dgvAlumnos.DataSource = null;
-            dgvAlumnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-
-            try
-            {
-                alumnos.Matricula = int. Parse (txtMatriculaAlumnos.Text);
-                dgvAlumnos.DataSource = alumnos.Consultar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Requiere asignar datos"+ex.Message);
-            }
-        }
+       
     }
 }
