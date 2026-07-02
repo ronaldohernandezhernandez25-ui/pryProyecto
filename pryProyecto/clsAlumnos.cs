@@ -20,13 +20,18 @@ namespace pryProyecto
         private string telefono;
         private string correo;
         private decimal promedioBachillerato;
+
         private int idTutor;
         private int idCarrera;
         private int idUsuario;
 
+        private string nombreUsuario;
+        private string password;
+        private string perfil;
+
         private MySqlDataAdapter consulta;
         private DataTable tabla;
-
+        private MySqlCommand comando;
         public int Matricula { get => matricula; set => matricula = value; }
         public string NombreAlumno { get => nombreAlumno; set => nombreAlumno = value; }
         public string ApellidoP { get => apellidoP; set => apellidoP = value; }
@@ -38,6 +43,9 @@ namespace pryProyecto
         public int IdTutor { get => idTutor; set => idTutor = value; }
         public int IdCarrera { get => idCarrera; set => idCarrera = value; }
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+        public string Password { get => password; set => password = value; }
+        public string Perfil { get => perfil; set => perfil = value; }
 
         public DataTable CargarDataGrid()
         {
@@ -119,6 +127,22 @@ namespace pryProyecto
                 throw new Exception("Error al obtener el catálogo de tutores: " + ex.Message);
             }
             return tabla;
+        }
+
+        public void LimpiarPanel(Panel panelDestino)
+        {
+            foreach (Control control in panelDestino.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Clear();
+                }
+
+                else if (control is ComboBox)
+                {
+                    ((ComboBox)control).SelectedIndex = -1;
+                }
+            }
         }
         public DataTable Consultar()
         {

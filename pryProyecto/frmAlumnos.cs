@@ -126,35 +126,8 @@ namespace pryProyecto
         {
             idMatricula = 0;
             idUsuario = 0;
-
-            // Limpiar campos de alumno
-            txtMatricula.Clear();
-            txtNombre.Clear();
-            txtAPaterno.Clear();
-            txtAMaterno.Clear();
-            txtDireccion.Clear();
-            txtTelefono.Clear();
-            txtCorreo.Clear();
-            txtPromedioBachillerato.Clear();
-
-            // Limpiar campos de usuario relacionados
-            txtUsuario.Clear();
-            txtPassword.Clear();
-
-            try
-            {
-                cmbCarrera.SelectedIndex = 0;
-            }
-            catch { cmbCarrera.SelectedIndex = -1; }
-
-            try
-            {
-                cmbTutor.SelectedIndex = 0;
-            }
-            catch { cmbTutor.SelectedIndex = -1; }
-
-            cmbPerfil.SelectedIndex = -1;
-
+            alumnos.LimpiarPanel(panel1);
+            alumnos.LimpiarPanel(panel2);
             // Colocar el foco en el campo principal
             txtNombre.Focus();
         }
@@ -180,5 +153,6 @@ namespace pryProyecto
                 MessageBox.Show("Requiere asignar datos" + ex.Message);
             }
         }
+
     }
 }
