@@ -51,9 +51,7 @@
             btnGuardar = new Button();
             btnNuevo = new Button();
             btnEliminar = new Button();
-
             txtMatriculaAlumnos = new TextBox();
-
             txtNombreCarrera = new TextBox();
             dgvAlumnos = new DataGridView();
             lblTitulo = new Label();
@@ -65,91 +63,91 @@
             // txtMatricula
             // 
             txtMatricula.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtMatricula.Location = new Point(15, 24);
+            txtMatricula.Location = new Point(15, 23);
             txtMatricula.Name = "txtMatricula";
             txtMatricula.PlaceholderText = "Matricula";
-            txtMatricula.Size = new Size(271, 35);
+            txtMatricula.Size = new Size(271, 33);
             txtMatricula.TabIndex = 0;
             // 
             // txtNombre
             // 
             txtNombre.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtNombre.Location = new Point(15, 65);
+            txtNombre.Location = new Point(15, 62);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Nombre";
-            txtNombre.Size = new Size(271, 35);
+            txtNombre.Size = new Size(271, 33);
             txtNombre.TabIndex = 1;
             // 
             // txtAPaterno
             // 
             txtAPaterno.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtAPaterno.Location = new Point(15, 106);
+            txtAPaterno.Location = new Point(15, 101);
             txtAPaterno.Name = "txtAPaterno";
             txtAPaterno.PlaceholderText = "Apellido Paterno";
-            txtAPaterno.Size = new Size(271, 35);
+            txtAPaterno.Size = new Size(271, 33);
             txtAPaterno.TabIndex = 2;
             // 
             // txtAMaterno
             // 
             txtAMaterno.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtAMaterno.Location = new Point(15, 147);
+            txtAMaterno.Location = new Point(15, 140);
             txtAMaterno.Name = "txtAMaterno";
             txtAMaterno.PlaceholderText = "Apellido Materno";
-            txtAMaterno.Size = new Size(271, 35);
+            txtAMaterno.Size = new Size(271, 33);
             txtAMaterno.TabIndex = 3;
             // 
             // txtDireccion
             // 
             txtDireccion.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtDireccion.Location = new Point(15, 188);
+            txtDireccion.Location = new Point(15, 179);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.PlaceholderText = "Direccion";
-            txtDireccion.Size = new Size(271, 35);
+            txtDireccion.Size = new Size(271, 33);
             txtDireccion.TabIndex = 4;
             // 
             // txtTelefono
             // 
             txtTelefono.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtTelefono.Location = new Point(292, 24);
+            txtTelefono.Location = new Point(292, 23);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = "Telefono";
-            txtTelefono.Size = new Size(271, 35);
+            txtTelefono.Size = new Size(271, 33);
             txtTelefono.TabIndex = 5;
             // 
             // txtCorreo
             // 
             txtCorreo.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtCorreo.Location = new Point(292, 65);
+            txtCorreo.Location = new Point(292, 62);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "Correo";
-            txtCorreo.Size = new Size(271, 35);
+            txtCorreo.Size = new Size(271, 33);
             txtCorreo.TabIndex = 6;
             // 
             // txtPromedioBachillerato
             // 
             txtPromedioBachillerato.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtPromedioBachillerato.Location = new Point(292, 106);
+            txtPromedioBachillerato.Location = new Point(292, 101);
             txtPromedioBachillerato.Name = "txtPromedioBachillerato";
             txtPromedioBachillerato.PlaceholderText = "Promedio Bachillerato";
-            txtPromedioBachillerato.Size = new Size(271, 35);
+            txtPromedioBachillerato.Size = new Size(271, 33);
             txtPromedioBachillerato.TabIndex = 7;
             // 
             // cmbTutor
             // 
             cmbTutor.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
             cmbTutor.FormattingEnabled = true;
-            cmbTutor.Location = new Point(292, 147);
+            cmbTutor.Location = new Point(292, 140);
             cmbTutor.Name = "cmbTutor";
-            cmbTutor.Size = new Size(271, 36);
+            cmbTutor.Size = new Size(271, 34);
             cmbTutor.TabIndex = 8;
             // 
             // cmbCarrera
             // 
             cmbCarrera.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
             cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(292, 189);
+            cmbCarrera.Location = new Point(292, 180);
             cmbCarrera.Name = "cmbCarrera";
-            cmbCarrera.Size = new Size(271, 36);
+            cmbCarrera.Size = new Size(271, 34);
             cmbCarrera.TabIndex = 9;
             // 
             // panel1
@@ -166,9 +164,9 @@
             panel1.Controls.Add(txtAPaterno);
             panel1.Controls.Add(txtNombre);
             panel1.Controls.Add(txtMatricula);
-            panel1.Location = new Point(146, 173);
+            panel1.Location = new Point(146, 164);
             panel1.Name = "panel1";
-            panel1.Size = new Size(586, 247);
+            panel1.Size = new Size(586, 235);
             panel1.TabIndex = 10;
             // 
             // panel2
@@ -178,9 +176,9 @@
             panel2.Controls.Add(cmbPerfil);
             panel2.Controls.Add(txtPassword);
             panel2.Controls.Add(txtUsuario);
-            panel2.Location = new Point(784, 174);
+            panel2.Location = new Point(784, 165);
             panel2.Name = "panel2";
-            panel2.Size = new Size(323, 247);
+            panel2.Size = new Size(323, 235);
             panel2.TabIndex = 11;
             // 
             // cmbPerfil
@@ -188,36 +186,37 @@
             cmbPerfil.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbPerfil.FormattingEnabled = true;
             cmbPerfil.Items.AddRange(new object[] { "Administrador", "Alumnos", "Docente", "Tutor" });
-            cmbPerfil.Location = new Point(13, 136);
+            cmbPerfil.Location = new Point(13, 129);
             cmbPerfil.Name = "cmbPerfil";
-            cmbPerfil.Size = new Size(297, 36);
+            cmbPerfil.Size = new Size(297, 34);
             cmbPerfil.TabIndex = 2;
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(13, 64);
+            txtPassword.Location = new Point(13, 61);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Password";
-            txtPassword.Size = new Size(297, 35);
+            txtPassword.Size = new Size(297, 33);
             txtPassword.TabIndex = 1;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtUsuario.Location = new Point(13, 23);
+            txtUsuario.Location = new Point(13, 22);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuario";
-            txtUsuario.Size = new Size(297, 35);
+            txtUsuario.Size = new Size(297, 33);
             txtUsuario.TabIndex = 0;
             // 
             // lblAlumno
             // 
             lblAlumno.AutoSize = true;
             lblAlumno.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAlumno.Location = new Point(163, 142);
+            lblAlumno.Location = new Point(163, 135);
             lblAlumno.Name = "lblAlumno";
-            lblAlumno.Size = new Size(99, 28);
+            lblAlumno.Size = new Size(92, 26);
             lblAlumno.TabIndex = 12;
             lblAlumno.Text = "Alumno";
             // 
@@ -225,9 +224,9 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsuario.Location = new Point(799, 143);
+            lblUsuario.Location = new Point(799, 136);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(96, 28);
+            lblUsuario.Size = new Size(88, 26);
             lblUsuario.TabIndex = 13;
             lblUsuario.Text = "Usuario";
             // 
@@ -235,55 +234,57 @@
             // 
             btnGuardar.BackgroundImage = (Image)resources.GetObject("btnGuardar.BackgroundImage");
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnGuardar.Location = new Point(530, 438);
+            btnGuardar.Location = new Point(530, 416);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(147, 68);
+            btnGuardar.Size = new Size(147, 65);
             btnGuardar.TabIndex = 15;
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnNuevo
             // 
             btnNuevo.BackgroundImage = (Image)resources.GetObject("btnNuevo.BackgroundImage");
             btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNuevo.Location = new Point(290, 438);
+            btnNuevo.Location = new Point(290, 416);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(147, 68);
+            btnNuevo.Size = new Size(147, 65);
             btnNuevo.TabIndex = 14;
             btnNuevo.UseVisualStyleBackColor = true;
-
             btnNuevo.Click += btnNuevo_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.Location = new Point(767, 438);
+            btnEliminar.Location = new Point(767, 416);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(147, 68);
+            btnEliminar.Size = new Size(147, 65);
             btnEliminar.TabIndex = 16;
             btnEliminar.UseVisualStyleBackColor = true;
             // 
             // txtMatriculaAlumnos
             // 
             txtMatriculaAlumnos.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtMatriculaAlumnos.Location = new Point(817, 513);
+            txtMatriculaAlumnos.Location = new Point(817, 487);
             txtMatriculaAlumnos.Name = "txtMatriculaAlumnos";
             txtMatriculaAlumnos.PlaceholderText = "Buscar por matricula";
-            txtMatriculaAlumnos.Size = new Size(251, 39);
+            txtMatriculaAlumnos.Size = new Size(251, 36);
             txtMatriculaAlumnos.TabIndex = 17;
             txtMatriculaAlumnos.TextChanged += txtNombreCarrera_TextChanged;
+            // 
             // txtNombreCarrera
             // 
             txtNombreCarrera.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreCarrera.Location = new Point(817, 513);
+            txtNombreCarrera.Location = new Point(817, 487);
             txtNombreCarrera.Name = "txtNombreCarrera";
             txtNombreCarrera.PlaceholderText = "Buscar alumno";
-            txtNombreCarrera.Size = new Size(251, 39);
+            txtNombreCarrera.Size = new Size(251, 36);
             txtNombreCarrera.TabIndex = 17;
             // 
             // dgvAlumnos
             // 
             dgvAlumnos.AllowUserToAddRows = false;
+            dgvAlumnos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -302,11 +303,12 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvAlumnos.DefaultCellStyle = dataGridViewCellStyle2;
             dgvAlumnos.EnableHeadersVisualStyles = false;
-            dgvAlumnos.Location = new Point(146, 557);
+            dgvAlumnos.Location = new Point(146, 529);
             dgvAlumnos.Name = "dgvAlumnos";
-            dgvAlumnos.RowHeadersWidth = 51;
+            dgvAlumnos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
             dgvAlumnos.RowTemplate.Height = 35;
-            dgvAlumnos.Size = new Size(961, 234);
+            dgvAlumnos.ScrollBars = ScrollBars.None;
+            dgvAlumnos.Size = new Size(961, 222);
             dgvAlumnos.TabIndex = 18;
             dgvAlumnos.SelectionChanged += dgvAlumnos_SelectionChanged;
             // 
@@ -314,24 +316,21 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(400, 51);
+            lblTitulo.Location = new Point(495, 35);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(286, 73);
+            lblTitulo.Size = new Size(262, 67);
             lblTitulo.TabIndex = 19;
             lblTitulo.Text = "Alumnos";
             // 
             // frmAlumnos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1274, 803);
+            ClientSize = new Size(1274, 763);
             Controls.Add(lblTitulo);
             Controls.Add(dgvAlumnos);
-
             Controls.Add(txtMatriculaAlumnos);
-
             Controls.Add(txtNombreCarrera);
-
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);

@@ -238,7 +238,7 @@ namespace pryProyecto
                                 case 1://ACTUALIZAR
                                        //Paso A: Actualizar la tabla de usuarios utilizando el ID que recuperamos en el click de Grid
 
-                                    string sqlUpdUser = "UPDATE tblusuarios SET vchnombreUsuario = @nomUser, vchpassword = MD5(@pass), vchperfil = @perfil " +
+                                    string sqlUpdUser = "UPDATE tblusuarios SET vchnombreUsuario = @nomUser, vchperfil = @perfil " +
                                                         "WHERE intidUsuarios = @idUsuarios;";
 
                                     using (comando = new MySqlCommand(sqlUpdUser, conexion, transaccion))
@@ -246,7 +246,6 @@ namespace pryProyecto
 
                                         comando.Parameters.AddWithValue("@idUsuario", idUsuario);
                                         comando.Parameters.AddWithValue("@nomUser", nombreUsuario);
-                                        comando.Parameters.AddWithValue("@pass", password);
                                         comando.Parameters.AddWithValue("@perfil", perfil);
 
                                         comando.ExecuteNonQuery();
