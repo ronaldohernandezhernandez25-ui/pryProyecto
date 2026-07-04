@@ -52,9 +52,9 @@
             // 
             btnNuevoTutor.BackgroundImage = (Image)resources.GetObject("btnNuevoTutor.BackgroundImage");
             btnNuevoTutor.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNuevoTutor.Location = new Point(165, 296);
+            btnNuevoTutor.Location = new Point(165, 281);
             btnNuevoTutor.Name = "btnNuevoTutor";
-            btnNuevoTutor.Size = new Size(147, 68);
+            btnNuevoTutor.Size = new Size(147, 65);
             btnNuevoTutor.TabIndex = 0;
             btnNuevoTutor.UseVisualStyleBackColor = true;
             btnNuevoTutor.Click += btnNuevoTutor_Click;
@@ -63,9 +63,9 @@
             // 
             btnAgregarTutor.BackgroundImage = (Image)resources.GetObject("btnAgregarTutor.BackgroundImage");
             btnAgregarTutor.BackgroundImageLayout = ImageLayout.Stretch;
-            btnAgregarTutor.Location = new Point(394, 296);
+            btnAgregarTutor.Location = new Point(394, 281);
             btnAgregarTutor.Name = "btnAgregarTutor";
-            btnAgregarTutor.Size = new Size(147, 68);
+            btnAgregarTutor.Size = new Size(147, 65);
             btnAgregarTutor.TabIndex = 1;
             btnAgregarTutor.UseVisualStyleBackColor = true;
             btnAgregarTutor.Click += btnAgregarTutor_Click;
@@ -74,9 +74,9 @@
             // 
             btnEliminarTutor.BackgroundImage = (Image)resources.GetObject("btnEliminarTutor.BackgroundImage");
             btnEliminarTutor.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminarTutor.Location = new Point(646, 296);
+            btnEliminarTutor.Location = new Point(646, 281);
             btnEliminarTutor.Name = "btnEliminarTutor";
-            btnEliminarTutor.Size = new Size(147, 68);
+            btnEliminarTutor.Size = new Size(147, 65);
             btnEliminarTutor.TabIndex = 2;
             btnEliminarTutor.UseVisualStyleBackColor = true;
             btnEliminarTutor.Click += btnEliminarTutor_Click;
@@ -86,28 +86,30 @@
             dgvTutor.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = SystemColors.ControlLightLight;
             dgvTutor.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvTutor.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.DarkSalmon;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 224, 192);
             dataGridViewCellStyle2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(128, 128, 255);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 192, 192);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dgvTutor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvTutor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.BackColor = SystemColors.InactiveCaption;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
             dgvTutor.DefaultCellStyle = dataGridViewCellStyle3;
             dgvTutor.EnableHeadersVisualStyles = false;
-            dgvTutor.Location = new Point(160, 563);
+            dgvTutor.Location = new Point(160, 535);
             dgvTutor.Name = "dgvTutor";
             dgvTutor.RowHeadersWidth = 51;
-            dgvTutor.Size = new Size(957, 197);
+            dgvTutor.ScrollBars = ScrollBars.None;
+            dgvTutor.Size = new Size(957, 187);
             dgvTutor.TabIndex = 3;
             dgvTutor.SelectionChanged += dgvTutor_SelectionChanged;
             // 
@@ -121,63 +123,63 @@
             panel1.Controls.Add(btnNuevoTutor);
             panel1.Controls.Add(btnAgregarTutor);
             panel1.Controls.Add(btnEliminarTutor);
-            panel1.Location = new Point(160, 136);
+            panel1.Location = new Point(160, 129);
             panel1.Name = "panel1";
-            panel1.Size = new Size(957, 372);
+            panel1.Size = new Size(957, 353);
             panel1.TabIndex = 4;
             // 
             // txtCorreo
             // 
             txtCorreo.Font = new Font("Book Antiqua", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtCorreo.Location = new Point(165, 253);
+            txtCorreo.Location = new Point(165, 240);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "Ingrese Su correo Electronico";
-            txtCorreo.Size = new Size(629, 36);
+            txtCorreo.Size = new Size(629, 34);
             txtCorreo.TabIndex = 7;
             // 
             // txtTelefono
             // 
             txtTelefono.Font = new Font("Book Antiqua", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtTelefono.Location = new Point(165, 204);
+            txtTelefono.Location = new Point(165, 194);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = "Ingrese su Telefono";
-            txtTelefono.Size = new Size(629, 36);
+            txtTelefono.Size = new Size(629, 34);
             txtTelefono.TabIndex = 6;
             // 
             // txtDireccion
             // 
             txtDireccion.Font = new Font("Book Antiqua", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDireccion.Location = new Point(165, 152);
+            txtDireccion.Location = new Point(165, 144);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.PlaceholderText = "Ingrese su Dirección";
-            txtDireccion.Size = new Size(629, 36);
+            txtDireccion.Size = new Size(629, 34);
             txtDireccion.TabIndex = 5;
             // 
             // txtParentesco
             // 
             txtParentesco.Font = new Font("Book Antiqua", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtParentesco.Location = new Point(165, 89);
+            txtParentesco.Location = new Point(165, 85);
             txtParentesco.Name = "txtParentesco";
             txtParentesco.PlaceholderText = "Ingrese su Parentesco";
-            txtParentesco.Size = new Size(629, 36);
+            txtParentesco.Size = new Size(629, 34);
             txtParentesco.TabIndex = 4;
             // 
             // txtNombreTutor
             // 
             txtNombreTutor.Font = new Font("Book Antiqua", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreTutor.Location = new Point(165, 29);
+            txtNombreTutor.Location = new Point(165, 28);
             txtNombreTutor.Name = "txtNombreTutor";
             txtNombreTutor.PlaceholderText = "Ingrese el nombre completo del tutor";
-            txtNombreTutor.Size = new Size(629, 36);
+            txtNombreTutor.Size = new Size(629, 34);
             txtNombreTutor.TabIndex = 3;
             // 
             // txtBuscarTutor
             // 
             txtBuscarTutor.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscarTutor.Location = new Point(866, 517);
+            txtBuscarTutor.Location = new Point(866, 491);
             txtBuscarTutor.Name = "txtBuscarTutor";
             txtBuscarTutor.PlaceholderText = "Buscar Tutor";
-            txtBuscarTutor.Size = new Size(251, 39);
+            txtBuscarTutor.Size = new Size(251, 36);
             txtBuscarTutor.TabIndex = 5;
             txtBuscarTutor.TextChanged += txtBuscarTutor_TextChanged;
             // 
@@ -185,19 +187,19 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(523, 51);
+            lblTitulo.Location = new Point(523, 48);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(242, 73);
+            lblTitulo.Size = new Size(222, 67);
             lblTitulo.TabIndex = 6;
             lblTitulo.Text = "Tutores";
             // 
             // frmTutor
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1274, 803);
+            ClientSize = new Size(1274, 763);
             Controls.Add(lblTitulo);
             Controls.Add(txtBuscarTutor);
             Controls.Add(panel1);
