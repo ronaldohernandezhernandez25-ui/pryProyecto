@@ -209,5 +209,28 @@ namespace pryProyecto
             }
         }
 
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var respuesta = MessageBox.Show($"¿Estás seguro de que deseas eliminar este alumno?", "ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (respuesta == DialogResult.Yes)
+            {
+                try
+                {
+
+                alumnos = new clsAlumnos();
+                
+                alumnos.Matricula = idMatricula;
+                alumnos.IdUsuario = idUsuario;
+
+                string resultado = alumnos.Eliminar();
+
+                MessageBox.Show(resultado, "Registro eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cargarGrid(); 
+                }
+                catch(Exception ex) { 
+                    MessageBox.Show("Error al eliminar el registro: " + ex.Message, "Error operacional", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
