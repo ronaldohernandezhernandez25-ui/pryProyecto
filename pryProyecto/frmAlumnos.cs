@@ -156,6 +156,8 @@ namespace pryProyecto
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (!alumnos.ValidarCampos(panel1) || !alumnos.ValidarCampos(panel2))
+                return;
             try
             {
                 //Determinamos el tipo de operacion
