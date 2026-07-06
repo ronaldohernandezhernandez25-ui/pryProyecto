@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -66,8 +67,8 @@ namespace pryProyecto
                                  "C.nombreCarrera AS Carrera, " +
                                  "T.nombreTutor AS Tutor, " +
                                  "U.vchnombreUsuario AS Usuario, " +
-                                 "U.vchpassword, "+ // <-- SE AGREGA EL PASSWORD
-                                 "U.vchperfil, "+ //<-- SE AGREGA EL PERFIL
+                                 "U.vchpassword, " + // <-- SE AGREGA EL PASSWORD
+                                 "U.vchperfil, " + //<-- SE AGREGA EL PERFIL
                                  "A.direccion, A.telefono, A.correo, " +
                                  "A.promedioBachillerato, A.foto, " +
                                  "A.idTutor, A.idCarrera, A.idUsuario " +
@@ -131,6 +132,35 @@ namespace pryProyecto
             }
             return tabla;
         }
+        
+        public bool ValidarCampos(Panel panelDestino)
+        {
+            foreach (Control control in panelDestino.Controls)
+            {
+                if (control is TextBox campos)
+                {
+                    if (string.IsNullOrEmpty(campos.Text))
+                    {
+                        MessageBox.Show("Falta llenar campos",
+                            "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        campos.Focus();
+                        return false;
+
+                    }
+                }
+                else if (control is ComboBox cmb)
+                {
+                    if (cmb.SelectedIndex <= 0)
+                    {
+                        MessageBox.Show("Debe selccionar una opcion",
+                            "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        cmb.Focus();
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
 
         public void LimpiarPanel(Panel panelDestino)
         {
@@ -143,7 +173,7 @@ namespace pryProyecto
 
                 else if (control is ComboBox)
                 {
-                    ((ComboBox)control).SelectedIndex = -1;
+                    ((ComboBox)control).SelectedIndex = 0;
                 }
             }
         }
@@ -163,8 +193,8 @@ namespace pryProyecto
                                  "C.nombreCarrera AS Carrera, " +
                                  "T.nombreTutor AS Tutor, " +
                                  "U.vchnombreUsuario AS Usuario, " +
-                                 "U.vchpassword, "+ // <-- SE AGREGA EL PASSWORD
-                                 "U.vchperfil, "+ //<-- SE AGREGA EL PERFIL
+                                 "U.vchpassword, " + // <-- SE AGREGA EL PASSWORD
+                                 "U.vchperfil, " + //<-- SE AGREGA EL PERFIL
                                  "A.direccion, A.telefono, A.correo, " +
                                  "A.promedioBachillerato, A.foto, " +
                                  "A.idTutor, A.idCarrera, A.idUsuario " +
@@ -303,9 +333,9 @@ namespace pryProyecto
                             //Si algo fallo (en el usuario o en el alumno), deshacemos todo para evitar inconsistencias
                             transaccion.Rollback();
                             throw new Exception("Error en la operacion. Se cancelan los cambios: " + ex.Message);
-                        
+
                         }
-                    
+
                     }
 
                 }
@@ -319,8 +349,6 @@ namespace pryProyecto
             return msg;
 
         }//Finaliza el emtodo de GUARDAR NUEVO o MODIFICAR
-
-
 
         //Eliminacion  
         public string Eliminar()
