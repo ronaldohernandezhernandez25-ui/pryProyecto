@@ -49,9 +49,9 @@
             // pcbLogo
             // 
             pcbLogo.Image = (Image)resources.GetObject("pcbLogo.Image");
-            pcbLogo.Location = new Point(709, 49);
+            pcbLogo.Location = new Point(709, 47);
             pcbLogo.Name = "pcbLogo";
-            pcbLogo.Size = new Size(168, 179);
+            pcbLogo.Size = new Size(168, 170);
             pcbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLogo.TabIndex = 0;
             pcbLogo.TabStop = false;
@@ -60,9 +60,9 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Book Antiqua", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(453, 141);
+            lblTitulo.Location = new Point(453, 134);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(261, 73);
+            lblTitulo.Size = new Size(240, 67);
             lblTitulo.TabIndex = 1;
             lblTitulo.Text = "Carreras";
             // 
@@ -73,18 +73,18 @@
             pnlAgrupaControles.Controls.Add(btnNuevo);
             pnlAgrupaControles.Controls.Add(txtDescripcion);
             pnlAgrupaControles.Controls.Add(txtNombre);
-            pnlAgrupaControles.Location = new Point(246, 248);
+            pnlAgrupaControles.Location = new Point(246, 236);
             pnlAgrupaControles.Name = "pnlAgrupaControles";
-            pnlAgrupaControles.Size = new Size(798, 268);
+            pnlAgrupaControles.Size = new Size(798, 255);
             pnlAgrupaControles.TabIndex = 2;
             // 
             // btnEliminar
             // 
             btnEliminar.BackgroundImage = (Image)resources.GetObject("btnEliminar.BackgroundImage");
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.Location = new Point(496, 183);
+            btnEliminar.Location = new Point(496, 174);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(147, 68);
+            btnEliminar.Size = new Size(147, 65);
             btnEliminar.TabIndex = 4;
             btnEliminar.UseVisualStyleBackColor = true;
             btnEliminar.Click += btnEliminar_Click;
@@ -93,9 +93,9 @@
             // 
             btnGuardar.BackgroundImage = (Image)resources.GetObject("btnGuardar.BackgroundImage");
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnGuardar.Location = new Point(343, 183);
+            btnGuardar.Location = new Point(343, 174);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(147, 68);
+            btnGuardar.Size = new Size(147, 65);
             btnGuardar.TabIndex = 3;
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
@@ -104,9 +104,9 @@
             // 
             btnNuevo.BackgroundImage = (Image)resources.GetObject("btnNuevo.BackgroundImage");
             btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNuevo.Location = new Point(179, 183);
+            btnNuevo.Location = new Point(179, 174);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(147, 68);
+            btnNuevo.Size = new Size(147, 65);
             btnNuevo.TabIndex = 2;
             btnNuevo.UseVisualStyleBackColor = true;
             btnNuevo.Click += btnNuevo_Click;
@@ -114,24 +114,25 @@
             // txtDescripcion
             // 
             txtDescripcion.Font = new Font("Book Antiqua", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtDescripcion.Location = new Point(179, 119);
+            txtDescripcion.Location = new Point(179, 113);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.PlaceholderText = "Escriba una descripcion de la carrera";
-            txtDescripcion.Size = new Size(463, 36);
+            txtDescripcion.Size = new Size(463, 34);
             txtDescripcion.TabIndex = 1;
             // 
             // txtNombre
             // 
             txtNombre.Font = new Font("Book Antiqua", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(180, 44);
+            txtNombre.Location = new Point(180, 42);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Escriba el nombre de la carrera";
-            txtNombre.Size = new Size(463, 36);
+            txtNombre.Size = new Size(463, 34);
             txtNombre.TabIndex = 0;
             // 
             // dgvCarreras
             // 
             dgvCarreras.AllowUserToAddRows = false;
+            dgvCarreras.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
             dataGridViewCellStyle1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -150,31 +151,32 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvCarreras.DefaultCellStyle = dataGridViewCellStyle2;
             dgvCarreras.EnableHeadersVisualStyles = false;
-            dgvCarreras.Location = new Point(164, 567);
+            dgvCarreras.Location = new Point(247, 538);
             dgvCarreras.Name = "dgvCarreras";
             dgvCarreras.RowHeadersWidth = 51;
             dgvCarreras.RowTemplate.Height = 35;
-            dgvCarreras.Size = new Size(961, 192);
+            dgvCarreras.ScrollBars = ScrollBars.None;
+            dgvCarreras.Size = new Size(797, 182);
             dgvCarreras.TabIndex = 3;
             dgvCarreras.SelectionChanged += dgvCarreras_SelectionChanged;
             // 
             // txtNombreCarrera
             // 
             txtNombreCarrera.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreCarrera.Location = new Point(793, 522);
+            txtNombreCarrera.Location = new Point(793, 496);
             txtNombreCarrera.Name = "txtNombreCarrera";
             txtNombreCarrera.PlaceholderText = "Buscar carrera";
-            txtNombreCarrera.Size = new Size(251, 39);
+            txtNombreCarrera.Size = new Size(251, 36);
             txtNombreCarrera.TabIndex = 4;
             txtNombreCarrera.TextChanged += txtNombreCarrera_TextChanged;
             // 
             // frmCarreras
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1274, 803);
+            ClientSize = new Size(1274, 763);
             Controls.Add(txtNombreCarrera);
             Controls.Add(dgvCarreras);
             Controls.Add(pnlAgrupaControles);
