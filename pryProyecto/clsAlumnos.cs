@@ -143,7 +143,7 @@ namespace pryProyecto
 
                 else if (control is ComboBox)
                 {
-                    ((ComboBox)control).SelectedIndex = -1;
+                    ((ComboBox)control).SelectedIndex = 0;
                 }
             }
         }
@@ -221,7 +221,7 @@ namespace pryProyecto
                                     using (comando = new MySqlCommand(sqlInsUser, conexion, transaccion))
                                     {
                                         comando.Parameters.AddWithValue("@nomUser", nombreUsuario);
-                                        comando.Parameters.AddWithValue("@pass",string.IsNullOrEmpty(password));
+                                        comando.Parameters.AddWithValue("@pass", password);
                                         comando.Parameters.AddWithValue("@perfil", perfil);
                                         nuevoIdUsuario = Convert.ToInt32(comando.ExecuteScalar());
                                     }

@@ -42,7 +42,7 @@
             lblAlumno = new Label();
             panel2 = new Panel();
             cmbPerfil = new ComboBox();
-            txtPassword = new TextBox();
+            xtPassword = new TextBox();
             txtUsuario = new TextBox();
             panel1 = new Panel();
             cmbCarrera = new ComboBox();
@@ -173,7 +173,7 @@
             panel2.BackColor = SystemColors.ActiveCaption;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(cmbPerfil);
-            panel2.Controls.Add(txtPassword);
+            panel2.Controls.Add(xtPassword);
             panel2.Controls.Add(txtUsuario);
             panel2.Location = new Point(795, 154);
             panel2.Name = "panel2";
@@ -190,15 +190,15 @@
             cmbPerfil.Size = new Size(297, 34);
             cmbPerfil.TabIndex = 2;
             // 
-            // txtPassword
+            // xtPassword
             // 
-            txtPassword.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtPassword.Location = new Point(13, 61);
-            txtPassword.Name = "txtPassword";
-            txtPassword.PlaceholderText = "Password";
-            txtPassword.Size = new Size(297, 33);
-            txtPassword.TabIndex = 1;
-            txtPassword.UseSystemPasswordChar = true;
+            xtPassword.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            xtPassword.Location = new Point(13, 61);
+            xtPassword.Name = "xtPassword";
+            xtPassword.PlaceholderText = "Password";
+            xtPassword.Size = new Size(297, 33);
+            xtPassword.TabIndex = 1;
+            xtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
@@ -358,7 +358,7 @@
         private Label lblAlumno;
         private Panel panel2;
         private ComboBox cmbPerfil;
-        private TextBox txtPassword;
+        private TextBox xtPassword;
         private TextBox txtUsuario;
         private Panel panel1;
         private ComboBox cmbCarrera;
