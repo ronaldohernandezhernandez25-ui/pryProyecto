@@ -131,36 +131,6 @@ namespace pryProyecto
             }
             return tabla;
         }
-        
-        public bool ValidarCampos(Panel panelDestino)
-        {
-            foreach (Control control in panelDestino.Controls)
-            {
-                if (control is TextBox campos)
-                {
-                    if (string.IsNullOrEmpty(campos.Text))
-                    {
-                        MessageBox.Show("Falta llenar campos",
-                            "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        campos.Focus();
-                        return false;
-
-                    }
-                }
-                else if (control is ComboBox cmb)
-                {
-                    if (cmb.SelectedIndex <= 0)
-                    {
-                        MessageBox.Show("Debe selccionar una opcion",
-                            "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        cmb.Focus();
-                        return false;
-                    }
-                }
-            }
-            return true;
-        }
-
 
         public void LimpiarPanel(Panel panelDestino)
         {
