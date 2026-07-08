@@ -28,13 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDocente));
             lblTitulo = new Label();
-            dgvAlumnos = new DataGridView();
-            txtMatriculaAlumnos = new TextBox();
-            txtNombreCarrera = new TextBox();
+            dgvDocentes = new DataGridView();
+            txtClaveDocente = new TextBox();
             btnEliminar = new Button();
             btnGuardar = new Button();
             btnNuevo = new Button();
@@ -42,20 +41,15 @@
             lblAlumno = new Label();
             panel2 = new Panel();
             cmbPerfil = new ComboBox();
-            xtPassword = new TextBox();
+            txtPassword = new TextBox();
             txtUsuario = new TextBox();
-            panel1 = new Panel();
-            cmbCarrera = new ComboBox();
-            cmbTutor = new ComboBox();
-            txtPromedioBachillerato = new TextBox();
-            txtCorreo = new TextBox();
+            txtClave = new TextBox();
+            txtNombreDocente = new TextBox();
+            txtPuesto = new TextBox();
             txtTelefono = new TextBox();
-            txtDireccion = new TextBox();
-            txtAMaterno = new TextBox();
-            txtAPaterno = new TextBox();
-            txtNombre = new TextBox();
-            txtMatricula = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dgvAlumnos).BeginInit();
+            txtCorreo = new TextBox();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)dgvDocentes).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -70,53 +64,46 @@
             lblTitulo.TabIndex = 30;
             lblTitulo.Text = "Docentes";
             // 
-            // dgvAlumnos
+            // dgvDocentes
             // 
-            dgvAlumnos.AllowUserToAddRows = false;
-            dgvAlumnos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(255, 224, 192);
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 192, 192);
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dgvAlumnos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.InactiveCaption;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 255, 192);
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Desktop;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dgvAlumnos.DefaultCellStyle = dataGridViewCellStyle4;
-            dgvAlumnos.EnableHeadersVisualStyles = false;
-            dgvAlumnos.Location = new Point(157, 518);
-            dgvAlumnos.Name = "dgvAlumnos";
-            dgvAlumnos.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
-            dgvAlumnos.RowTemplate.Height = 35;
-            dgvAlumnos.ScrollBars = ScrollBars.None;
-            dgvAlumnos.Size = new Size(961, 222);
-            dgvAlumnos.TabIndex = 29;
+            dgvDocentes.AllowUserToAddRows = false;
+            dgvDocentes.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 192, 192);
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvDocentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dgvDocentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.InactiveCaption;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 255, 192);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Desktop;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvDocentes.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvDocentes.EnableHeadersVisualStyles = false;
+            dgvDocentes.Location = new Point(166, 518);
+            dgvDocentes.Name = "dgvDocentes";
+            dgvDocentes.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToFirstHeader;
+            dgvDocentes.RowTemplate.Height = 35;
+            dgvDocentes.ScrollBars = ScrollBars.None;
+            dgvDocentes.Size = new Size(939, 222);
+            dgvDocentes.TabIndex = 29;
+            dgvDocentes.SelectionChanged += dgvDocentes_SelectionChanged_1;
             // 
-            // txtMatriculaAlumnos
+            // txtClaveDocente
             // 
-            txtMatriculaAlumnos.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtMatriculaAlumnos.Location = new Point(828, 476);
-            txtMatriculaAlumnos.Name = "txtMatriculaAlumnos";
-            txtMatriculaAlumnos.PlaceholderText = "Buscar por matricula";
-            txtMatriculaAlumnos.Size = new Size(251, 36);
-            txtMatriculaAlumnos.TabIndex = 27;
-            // 
-            // txtNombreCarrera
-            // 
-            txtNombreCarrera.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtNombreCarrera.Location = new Point(828, 476);
-            txtNombreCarrera.Name = "txtNombreCarrera";
-            txtNombreCarrera.PlaceholderText = "Buscar alumno";
-            txtNombreCarrera.Size = new Size(251, 36);
-            txtNombreCarrera.TabIndex = 28;
+            txtClaveDocente.Font = new Font("Book Antiqua", 15F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtClaveDocente.Location = new Point(854, 476);
+            txtClaveDocente.Name = "txtClaveDocente";
+            txtClaveDocente.PlaceholderText = "Buscar por Clave";
+            txtClaveDocente.Size = new Size(251, 36);
+            txtClaveDocente.TabIndex = 27;
+            txtClaveDocente.TextChanged += txtClaveDocente_TextChanged;
             // 
             // btnEliminar
             // 
@@ -152,7 +139,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblUsuario.Location = new Point(810, 125);
+            lblUsuario.Location = new Point(756, 124);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(88, 26);
             lblUsuario.TabIndex = 23;
@@ -162,7 +149,7 @@
             // 
             lblAlumno.AutoSize = true;
             lblAlumno.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAlumno.Location = new Point(174, 124);
+            lblAlumno.Location = new Point(249, 124);
             lblAlumno.Name = "lblAlumno";
             lblAlumno.Size = new Size(93, 26);
             lblAlumno.TabIndex = 22;
@@ -173,9 +160,9 @@
             panel2.BackColor = SystemColors.ActiveCaption;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(cmbPerfil);
-            panel2.Controls.Add(xtPassword);
+            panel2.Controls.Add(txtPassword);
             panel2.Controls.Add(txtUsuario);
-            panel2.Location = new Point(795, 154);
+            panel2.Location = new Point(756, 154);
             panel2.Name = "panel2";
             panel2.Size = new Size(323, 235);
             panel2.TabIndex = 21;
@@ -184,21 +171,20 @@
             // 
             cmbPerfil.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbPerfil.FormattingEnabled = true;
-            cmbPerfil.Items.AddRange(new object[] { "Administrador", "Alumnos", "Docente", "Tutor" });
-            cmbPerfil.Location = new Point(13, 129);
+            cmbPerfil.Location = new Point(13, 106);
             cmbPerfil.Name = "cmbPerfil";
             cmbPerfil.Size = new Size(297, 34);
             cmbPerfil.TabIndex = 2;
             // 
-            // xtPassword
+            // txtPassword
             // 
-            xtPassword.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            xtPassword.Location = new Point(13, 61);
-            xtPassword.Name = "xtPassword";
-            xtPassword.PlaceholderText = "Password";
-            xtPassword.Size = new Size(297, 33);
-            xtPassword.TabIndex = 1;
-            xtPassword.UseSystemPasswordChar = true;
+            txtPassword.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(13, 61);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PlaceholderText = "Password";
+            txtPassword.Size = new Size(297, 33);
+            txtPassword.TabIndex = 1;
+            txtPassword.UseSystemPasswordChar = true;
             // 
             // txtUsuario
             // 
@@ -209,114 +195,69 @@
             txtUsuario.Size = new Size(297, 33);
             txtUsuario.TabIndex = 0;
             // 
+            // txtClave
+            // 
+            txtClave.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtClave.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
+            txtClave.Location = new Point(15, 23);
+            txtClave.Name = "txtClave";
+            txtClave.PlaceholderText = "Clave";
+            txtClave.Size = new Size(397, 33);
+            txtClave.TabIndex = 0;
+            // 
+            // txtNombreDocente
+            // 
+            txtNombreDocente.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtNombreDocente.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
+            txtNombreDocente.Location = new Point(15, 62);
+            txtNombreDocente.Name = "txtNombreDocente";
+            txtNombreDocente.PlaceholderText = "Nombre del Docente";
+            txtNombreDocente.Size = new Size(397, 33);
+            txtNombreDocente.TabIndex = 1;
+            // 
+            // txtPuesto
+            // 
+            txtPuesto.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtPuesto.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
+            txtPuesto.Location = new Point(15, 101);
+            txtPuesto.Name = "txtPuesto";
+            txtPuesto.PlaceholderText = "Pueso";
+            txtPuesto.Size = new Size(397, 33);
+            txtPuesto.TabIndex = 2;
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtTelefono.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
+            txtTelefono.Location = new Point(15, 140);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.PlaceholderText = "Telefono";
+            txtTelefono.Size = new Size(397, 33);
+            txtTelefono.TabIndex = 3;
+            // 
+            // txtCorreo
+            // 
+            txtCorreo.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            txtCorreo.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
+            txtCorreo.Location = new Point(15, 179);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.PlaceholderText = "Correo";
+            txtCorreo.Size = new Size(397, 33);
+            txtCorreo.TabIndex = 4;
+            // 
             // panel1
             // 
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.BorderStyle = BorderStyle.Fixed3D;
-            panel1.Controls.Add(cmbCarrera);
-            panel1.Controls.Add(cmbTutor);
-            panel1.Controls.Add(txtPromedioBachillerato);
             panel1.Controls.Add(txtCorreo);
             panel1.Controls.Add(txtTelefono);
-            panel1.Controls.Add(txtDireccion);
-            panel1.Controls.Add(txtAMaterno);
-            panel1.Controls.Add(txtAPaterno);
-            panel1.Controls.Add(txtNombre);
-            panel1.Controls.Add(txtMatricula);
-            panel1.Location = new Point(157, 153);
+            panel1.Controls.Add(txtPuesto);
+            panel1.Controls.Add(txtNombreDocente);
+            panel1.Controls.Add(txtClave);
+            panel1.Location = new Point(249, 153);
             panel1.Name = "panel1";
-            panel1.Size = new Size(586, 235);
+            panel1.Size = new Size(439, 235);
             panel1.TabIndex = 20;
-            // 
-            // cmbCarrera
-            // 
-            cmbCarrera.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            cmbCarrera.FormattingEnabled = true;
-            cmbCarrera.Location = new Point(292, 180);
-            cmbCarrera.Name = "cmbCarrera";
-            cmbCarrera.Size = new Size(271, 34);
-            cmbCarrera.TabIndex = 9;
-            // 
-            // cmbTutor
-            // 
-            cmbTutor.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            cmbTutor.FormattingEnabled = true;
-            cmbTutor.Location = new Point(292, 140);
-            cmbTutor.Name = "cmbTutor";
-            cmbTutor.Size = new Size(271, 34);
-            cmbTutor.TabIndex = 8;
-            // 
-            // txtPromedioBachillerato
-            // 
-            txtPromedioBachillerato.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtPromedioBachillerato.Location = new Point(292, 101);
-            txtPromedioBachillerato.Name = "txtPromedioBachillerato";
-            txtPromedioBachillerato.PlaceholderText = "Promedio Bachillerato";
-            txtPromedioBachillerato.Size = new Size(271, 33);
-            txtPromedioBachillerato.TabIndex = 7;
-            // 
-            // txtCorreo
-            // 
-            txtCorreo.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtCorreo.Location = new Point(292, 62);
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.PlaceholderText = "Correo";
-            txtCorreo.Size = new Size(271, 33);
-            txtCorreo.TabIndex = 6;
-            // 
-            // txtTelefono
-            // 
-            txtTelefono.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtTelefono.Location = new Point(292, 23);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.PlaceholderText = "Telefono";
-            txtTelefono.Size = new Size(271, 33);
-            txtTelefono.TabIndex = 5;
-            // 
-            // txtDireccion
-            // 
-            txtDireccion.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtDireccion.Location = new Point(15, 179);
-            txtDireccion.Name = "txtDireccion";
-            txtDireccion.PlaceholderText = "Direccion";
-            txtDireccion.Size = new Size(271, 33);
-            txtDireccion.TabIndex = 4;
-            // 
-            // txtAMaterno
-            // 
-            txtAMaterno.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtAMaterno.Location = new Point(15, 140);
-            txtAMaterno.Name = "txtAMaterno";
-            txtAMaterno.PlaceholderText = "Apellido Materno";
-            txtAMaterno.Size = new Size(271, 33);
-            txtAMaterno.TabIndex = 3;
-            // 
-            // txtAPaterno
-            // 
-            txtAPaterno.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtAPaterno.Location = new Point(15, 101);
-            txtAPaterno.Name = "txtAPaterno";
-            txtAPaterno.PlaceholderText = "Apellido Paterno";
-            txtAPaterno.Size = new Size(271, 33);
-            txtAPaterno.TabIndex = 2;
-            // 
-            // txtNombre
-            // 
-            txtNombre.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtNombre.Location = new Point(15, 62);
-            txtNombre.Name = "txtNombre";
-            txtNombre.PlaceholderText = "Nombre";
-            txtNombre.Size = new Size(271, 33);
-            txtNombre.TabIndex = 1;
-            // 
-            // txtMatricula
-            // 
-            txtMatricula.Font = new Font("Book Antiqua", 13.7454548F, FontStyle.Bold);
-            txtMatricula.Location = new Point(15, 23);
-            txtMatricula.Name = "txtMatricula";
-            txtMatricula.PlaceholderText = "Matricula";
-            txtMatricula.Size = new Size(271, 33);
-            txtMatricula.TabIndex = 0;
             // 
             // frmDocente
             // 
@@ -324,9 +265,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1274, 764);
             Controls.Add(lblTitulo);
-            Controls.Add(dgvAlumnos);
-            Controls.Add(txtMatriculaAlumnos);
-            Controls.Add(txtNombreCarrera);
+            Controls.Add(dgvDocentes);
+            Controls.Add(txtClaveDocente);
             Controls.Add(btnEliminar);
             Controls.Add(btnGuardar);
             Controls.Add(btnNuevo);
@@ -336,7 +276,7 @@
             Controls.Add(panel1);
             Name = "frmDocente";
             Text = "frmDocente";
-            ((System.ComponentModel.ISupportInitialize)dgvAlumnos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDocentes).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -348,28 +288,22 @@
         #endregion
 
         private Label lblTitulo;
-        private DataGridView dgvAlumnos;
-        private TextBox txtMatriculaAlumnos;
-        private TextBox txtNombreCarrera;
+        private DataGridView dgvDocentes;
+        private TextBox txtClaveDocente;
         private Button btnEliminar;
         private Button btnGuardar;
         private Button btnNuevo;
         private Label lblUsuario;
         private Label lblAlumno;
         private Panel panel2;
-        private ComboBox cmbPerfil;
-        private TextBox xtPassword;
+        private TextBox txtPassword;
         private TextBox txtUsuario;
-        private Panel panel1;
-        private ComboBox cmbCarrera;
-        private ComboBox cmbTutor;
-        private TextBox txtPromedioBachillerato;
-        private TextBox txtCorreo;
+        private TextBox txtClave;
+        private TextBox txtNombreDocente;
+        private TextBox txtPuesto;
         private TextBox txtTelefono;
-        private TextBox txtDireccion;
-        private TextBox txtAMaterno;
-        private TextBox txtAPaterno;
-        private TextBox txtNombre;
-        private TextBox txtMatricula;
+        private TextBox txtCorreo;
+        private Panel panel1;
+        private ComboBox cmbPerfil;
     }
 }
