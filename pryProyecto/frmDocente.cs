@@ -89,5 +89,14 @@ namespace pryProyecto
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            idClave = 0;
+            idUsuario = 0;
+            docentes.LimpiarPanel(pnlDocente);
+            docentes.LimpiarPanel(pnlUsuario);
+            txtClave.Focus();
+        }
     }
 }
