@@ -96,5 +96,15 @@ namespace pryProyecto
             }
             return tabla;
         }
+        public void LimpiarPanel(Panel panelDestino)
+        {
+            foreach (Control control in panelDestino.Controls)
+            {
+                if (control is TextBox)
+                {
+                    ((TextBox)control).Clear();
+                }
+            }
+        }
     }
 }
